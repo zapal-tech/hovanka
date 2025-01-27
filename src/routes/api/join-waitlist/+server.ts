@@ -8,8 +8,6 @@ export const POST: RequestHandler = async ({ request }) => {
 
   console.log(email)
 
-  client.setApiKey(SENDGRID_API_KEY)
-
   const list_id = SENDGRID_LIST_ID
 
   try {
