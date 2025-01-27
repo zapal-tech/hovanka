@@ -1,0 +1,9 @@
+{
+	"/": [
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/api/join-waitlist": [
+		"src/routes/api/join-waitlist/+server.ts"
+	]
+}

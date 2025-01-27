@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@headlessui/tailwindcss';
+
+@theme {
+  --color-green-50: #eefbf6;
+  --color-green-100: #d6f5e7;
+  --color-green-200: #b0ead3;
+  --color-green-300: #7cd9ba;
+  --color-green-400: #47c09c;
+  --color-green-500: #24a684;
+  --color-green-600: #16856b;
+  --color-green-700: #126a57;
+  --color-green-800: #105546;
+  --color-green-900: #0e463b;
+  --color-green-950: #072721;
+
+  --font-sans: 'Inter', 'sans-serif';
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 2rem;
+
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 3rem;
+
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 3rem;
+
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  --animate-fade-in: fade-in 0.5s linear forwards;
+  --animate-marquee: marquee var(--marquee-duration) linear infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-spin-slower: spin 6s linear infinite;
+  --animate-spin-reverse: spin-reverse 1s linear infinite;
+  --animate-spin-reverse-slow: spin-reverse 4s linear infinite;
+  --animate-spin-reverse-slower: spin-reverse 6s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes marquee {
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes spin-reverse {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
+@theme inline {
+  --default-font-family: var(--font-sans);
+}
