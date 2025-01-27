@@ -1,5 +1,3 @@
-import client from '@sendgrid/client'
-
 import { SENDGRID_API_KEY, SENDGRID_LIST_ID } from '$env/static/private'
 
 import type { RequestHandler } from '../$types'
@@ -15,22 +13,26 @@ export const POST: RequestHandler = async ({ request }) => {
   const list_id = SENDGRID_LIST_ID
 
   try {
-    const [response] = await client.request({
-      url: `/v3/marketing/contacts`,
+    const response = await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
       method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${SENDGRID_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         list_ids: [list_id],
         contacts: [{ email }],
       }),
     })
 
-    console.log(response.statusCode)
-    console.log(response.body)
+    const body = await response.json()
 
-    return new Response(null, { status: response.statusCode })
+    console.log(response.status)
+    console.log(body)
+
+    return new Response(null, { status: response.status, statusText: response.statusText })
   } catch (error) {
     console.error(error)
-    console.error((error as Record<string, Record<string, unknown>>)?.response?.body)
 
     return new Response(null, { status: 500 })
   }
