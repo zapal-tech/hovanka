@@ -6,5 +6,5 @@ import { PUBLIC_WEB_APP_DOMAIN } from '$env/static/public'
 export const GET: RequestHandler = async () =>
   new Response(null, {
     status: 302,
-    headers: { location: `${PUBLIC_WEB_APP_DOMAIN}/sign-up` },
+    headers: { location: `https://${PUBLIC_WEB_APP_DOMAIN}/sign-up` },
   })
