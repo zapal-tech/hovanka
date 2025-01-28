@@ -1,6 +1,6 @@
-import { SENDGRID_API_KEY, SENDGRID_LIST_ID } from '$env/static/private'
+import type { RequestHandler } from '@sveltejs/kit'
 
-import type { RequestHandler } from '../$types'
+import { SENDGRID_API_KEY, SENDGRID_LIST_ID } from '$env/static/private'
 
 export const POST: RequestHandler = async ({ request }) => {
   const body = await request.json()
