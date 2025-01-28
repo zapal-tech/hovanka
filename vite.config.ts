@@ -5,6 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  server: {
+    allowedHosts: true,
+  },
   plugins: [
     paraglide({ project: './project.inlang', outdir: './src/lib/paraglide' }),
     enhancedImages(),

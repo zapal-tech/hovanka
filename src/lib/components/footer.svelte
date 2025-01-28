@@ -85,8 +85,8 @@
         <InputField
           type="email"
           name="email"
-          aria-label={m.email_placeholder()}
-          placeholder={m.email_placeholder()}
+          aria-label={m.your_email()}
+          placeholder={m.your_email()}
           autoComplete="email"
           required
           disabled={isLoading}

@@ -28,6 +28,7 @@
   }
 
   const classes = [
+    'cursor-pointer',
     baseStyles[variant],
     variant === 'outline' ? variantStyles.outline[color as OutlineColors] : variantStyles.solid[color as SolidColors],
     $$restProps.class,
