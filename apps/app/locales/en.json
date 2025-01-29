@@ -4,7 +4,7 @@
   "tagline": "Your mental health guide",
   "description": "Hovanka is an app that supports you and your mental health, always by your side",
   "email": "hello@hovanka.app",
-  "input_email": "Email address",
+  "input_email_address": "Email address",
   "input_password": "Password",
   "input_repeat_password": "Repeat password",
   "sign_in": "Sign in",
