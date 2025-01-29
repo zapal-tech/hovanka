@@ -9,6 +9,8 @@ import { splitPath } from '$lib/utils'
 
 // Bypass i18n for /api routes
 export const reroute: Reroute = (event) => {
+  console.log(event.url.hostname)
+
   if (event.url.pathname.startsWith('/api')) return
 
   if (event.url.hostname === PUBLIC_WEB_APP_DOMAIN) {
