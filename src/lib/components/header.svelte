@@ -2,7 +2,7 @@
   import { onDestroy } from 'svelte'
   import { createPopover } from 'svelte-headlessui'
 
-  import { PUBLIC_DOMAIN, PUBLIC_WEB_APP_DOMAIN } from '$env/static/public'
+  import { PUBLIC_WEB_APP_DOMAIN } from '$env/static/public'
   import * as m from '$lib/paraglide/messages'
 
   import Button from './button.svelte'

@@ -10,15 +10,13 @@ import { splitPath } from '$lib/utils'
 // Bypass i18n for /api routes
 export const reroute: Reroute = (event) => {
   if (event.url.pathname.startsWith('/api')) return
+
   if (event.url.hostname === PUBLIC_WEB_APP_DOMAIN) {
     const [localeOrSegment, ...rest] = splitPath(event.url.pathname)
 
     const isValidLocale = ['en', 'uk'].includes(localeOrSegment || '')
-    console.log(event.url.pathname)
 
-    event.url.pathname = `${isValidLocale ? `/${localeOrSegment}` : ''}/poc${isValidLocale ? '' : `/${localeOrSegment}`}${rest.length ? '/' : ''}${rest.join('/')}`
-
-    console.log(event.url.pathname)
+    return `${isValidLocale ? `/${localeOrSegment}` : ''}/poc${isValidLocale ? '' : `/${localeOrSegment}`}${rest.length ? '/' : ''}${rest.join('/')}`
   }
 
   return createI18n(runtime, { prefixDefaultLanguage: 'always' }).reroute()(event)
