@@ -1,0 +1,3 @@
+{
+  "extends": ["@zapal/dx/typescript/svelte", "./.svelte-kit/tsconfig.json"]
+}

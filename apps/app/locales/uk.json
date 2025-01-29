@@ -1,0 +1,18 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "name": "Хованка",
+  "tagline": "Твій шлях до самопізнання",
+  "description": "Хованка - це додаток для підтримки себе та свого ментального здоров'я, що завжди поруч",
+  "email": "hello@hovanka.app",
+  "input_email_address": "Адреса електронної пошти",
+  "input_password": "Пароль",
+  "input_repeat_password": "Повторіть пароль",
+  "sign_in": "Вхід",
+  "sign_in_title": "Вхід",
+  "sign_in_subtitle": "Немає облікового запису? <a href=\"/sign-up\" class=\"text-green-600\">Зареєструйся</a>",
+  "sign_in_button": "Увійти",
+  "sign_up": "Реєстрація",
+  "sign_up_title": "Реєстрація",
+  "sign_up_subtitle": "Вже маєш обліковий запис? <a href=\"/sign-in\" class=\"text-green-600\">Увійди</a>",
+  "sign_up_button": "Зареєструватися"
+}

@@ -1,18 +1,24 @@
-import { sveltePrettierConfig } from '@zapal/dx/prettier'
+import { defaultPrettierConfig } from '@zapal/dx/prettier'
 
+import appConfig from './apps/app/.prettierrc.js'
+// import cmsConfig from './apps/cms/.prettierrc.js'
+import webConfig from './apps/web/.prettierrc.js'
+
+/** @type {import('prettier').Config} */
 export default {
-  ...sveltePrettierConfig,
-  importOrderTypeScriptVersion: '5.6.2',
-  importOrder: [
-    '<BUILTIN_MODULES>',
-    '<THIRD_PARTY_MODULES>',
-    '^(@zapal)(/.*)$',
-    '',
-    '^(\\$app|\\$env|\\$lib|\\$service-worker)(/.*)?$',
-    '',
-    '^[.]',
-    '',
-    '^(?!.*[.]css$)[./].*$',
-    '.css$',
+  ...defaultPrettierConfig,
+  overrides: [
+    {
+      files: 'apps/web/**/*',
+      options: webConfig,
+    },
+    {
+      files: 'apps/app/**/*',
+      options: appConfig,
+    },
+    // {
+    //   files: 'apps/cms/**/*',
+    //   options: cmsConfig,
+    // },
   ],
 }

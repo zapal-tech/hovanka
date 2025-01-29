@@ -1,0 +1,39 @@
+{
+  "name": "@hovanka/app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide && vite build",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev --port 3001 --host",
+    "format": "prettier --write .",
+    "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
+    "lint": "prettier --check . && eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@headlessui/tailwindcss": "catalog:",
+    "@inlang/paraglide-sveltekit": "catalog:",
+    "@tailwindcss/forms": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "dotenv": "catalog:",
+    "svelte-headlessui": "catalog:",
+    "tailwindcss": "catalog:"
+  },
+  "devDependencies": {
+    "@inlang/paraglide-js": "catalog:",
+    "@sveltejs/adapter-cloudflare": "catalog:",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "catalog:",
+    "@zapal/dx": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "svelte": "catalog:",
+    "svelte-check": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}

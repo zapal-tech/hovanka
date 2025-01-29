@@ -4,6 +4,8 @@ node_modules
 # Output
 .output
 .svelte-kit
+.next
+.turbo
 /build
 
 # Testing
@@ -33,6 +35,8 @@ next-env.d.ts
 
 # Devcontainer
 .pnpm-store/
+.storage/
+.db/
 
 # Vite
 vite.config.js.timestamp-*
@@ -40,3 +44,4 @@ vite.config.ts.timestamp-*
 
 # TypeScript
 *.tsbuildinfo
+next-env.d.ts
