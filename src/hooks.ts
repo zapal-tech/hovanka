@@ -11,9 +11,14 @@ import { splitPath } from '$lib/utils'
 export const reroute: Reroute = (event) => {
   if (event.url.pathname.startsWith('/api')) return
   if (event.url.hostname === PUBLIC_WEB_APP_DOMAIN) {
-    const [localeOrSegment, segment, ...rest] = splitPath(event.url.pathname)
+    const [localeOrSegment, ...rest] = splitPath(event.url.pathname)
 
-    event.url.pathname = `${['en', 'uk'].includes(localeOrSegment || '') ? `/${localeOrSegment}` : ''}/poc/${segment === 'poc' ? '' : `${segment}/`}${rest.join('/')}`
+    const isValidLocale = ['en', 'uk'].includes(localeOrSegment || '')
+    console.log(event.url.pathname)
+
+    event.url.pathname = `${isValidLocale ? `/${localeOrSegment}` : ''}/poc${isValidLocale ? '' : `/${localeOrSegment}`}${rest.length ? '/' : ''}${rest.join('/')}`
+
+    console.log(event.url.pathname)
   }
 
   return createI18n(runtime, { prefixDefaultLanguage: 'always' }).reroute()(event)

@@ -4,6 +4,7 @@
 @plugin '@headlessui/tailwindcss';
 
 @theme {
+  --color-green-*: initial;
   --color-green-50: #eefbf6;
   --color-green-100: #d6f5e7;
   --color-green-200: #b0ead3;
