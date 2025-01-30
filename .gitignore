@@ -6,7 +6,8 @@ node_modules
 .svelte-kit
 .next
 .turbo
-/build
+build
+dist
 
 # Testing
 /coverage
@@ -37,6 +38,7 @@ next-env.d.ts
 .pnpm-store/
 .storage/
 .db/
+local.db*
 
 # Vite
 vite.config.js.timestamp-*

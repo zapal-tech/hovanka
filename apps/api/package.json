@@ -1,0 +1,48 @@
+{
+  "name": "@hovanka/api",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "build:local": "next build",
+    "dev": "next dev -p 3002",
+    "format": "prettier --write .",
+    "generate:migration": "payload migrate:create",
+    "generate:types": "payload generate:types",
+    "lint": "pnpm lint:types && pnpm lint:next",
+    "lint:next": "next lint",
+    "lint:types": "tsc --noemit",
+    "payload": "payload",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@hovanka/shared": "workspace:*",
+    "@payloadcms/db-sqlite": "catalog:",
+    "@payloadcms/next": "catalog:",
+    "@payloadcms/plugin-nested-docs": "catalog:",
+    "@payloadcms/plugin-redirects": "catalog:",
+    "@payloadcms/plugin-seo": "catalog:",
+    "@payloadcms/richtext-lexical": "catalog:",
+    "@payloadcms/storage-s3": "catalog:",
+    "@payloadcms/translations": "catalog:",
+    "@payloadcms/ui": "catalog:",
+    "@zapal/payload-email-sendgrid": "catalog:",
+    "next": "catalog:",
+    "payload": "catalog:",
+    "payload-oauth2": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@payloadcms/email-nodemailer": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@zapal/dx": "catalog:",
+    "dotenv": "catalog:",
+    "dotenv-expand": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}

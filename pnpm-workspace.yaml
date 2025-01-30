@@ -39,11 +39,11 @@ catalog:
   husky: ^9.1.7
   next: ^15.1.6
   payload: ^3.19.0
+  payload-oauth2: ^1.0.9
   prettier: ^3.4.2
   prettier-plugin-tailwindcss: ^0.6.11
   react: ^19.0.0
   'react-dom': ^19.0.0
-  sharp: ^0.33.5
   svelte: ^5.19.2
   svelte-check: ^4.1.4
   svelte-headlessui: ^0.0.46

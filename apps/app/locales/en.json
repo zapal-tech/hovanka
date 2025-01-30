@@ -11,8 +11,10 @@
   "sign_in_title": "Sign in to your account",
   "sign_in_subtitle": "Don't have an account? <a href=\"/sign-up\" class=\"text-green-600\">Sign up</a>",
   "sign_in_button": "Sign in",
+  "sign_in_with_google_button": "Sign in with Google",
   "sign_up": "Sign up",
   "sign_up_title": "Sign up for an account",
   "sign_up_subtitle": "Already have an account? <a href=\"/sign-in\" className=\"text-green-600\">Sign in</a>",
-  "sign_up_button": "Sign up"
+  "sign_up_button": "Sign up",
+  "sign_up_with_google_button": "Sign up with Google"
 }

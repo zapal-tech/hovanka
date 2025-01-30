@@ -3,6 +3,10 @@
 @plugin '@tailwindcss/forms';
 @plugin '@headlessui/tailwindcss';
 
+html {
+  color: var(--color-green-900);
+}
+
 @theme {
   --color-green-*: initial;
   --color-green-50: #eefbf6;

@@ -11,12 +11,14 @@
 </svelte:head>
 
 <AuthLayout title={m.sign_in_title()} subtitle={m.sign_in_subtitle()}>
-  <form>
+  <Button color="green" class="w-full">{m.sign_in_with_google_button()}</Button>
+
+  <!-- <form>
     <div class="space-y-6">
       <Input label={m.input_email_address()} name="email" type="email" autoComplete="email" required />
       <Input label={m.input_password()} name="password" type="password" autoComplete="current-password" required />
     </div>
 
     <Button type="submit" color="green" class="mt-8 w-full">{m.sign_in_button()}</Button>
-  </form>
+  </form> -->
 </AuthLayout>

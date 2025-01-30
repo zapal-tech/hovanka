@@ -11,7 +11,7 @@ export default {
     '^(@hovanka/shared)(/.*)?$',
     '^(@hovanka/ui)(/.*)?$',
     '',
-    '^(@cms|@cms-config)(/.*)?$',
+    '^(@api|@api-types)(/.*)?$',
     '',
     '^(\\$app|\\$env|\\$lib|\\$service-worker)(/.*)?$',
     '',

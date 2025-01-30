@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@headlessui/tailwindcss": "catalog:",
+    "@hovanka/shared": "workspace:*",
     "@inlang/paraglide-sveltekit": "catalog:",
     "@tailwindcss/forms": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "dotenv": "catalog:",
+    "payload": "catalog:",
     "svelte-headlessui": "catalog:",
     "tailwindcss": "catalog:"
   },

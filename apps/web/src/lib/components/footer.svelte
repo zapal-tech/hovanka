@@ -51,7 +51,7 @@
           </div>
         </div>
         <nav class="mt-11 flex gap-8">
-          <NavLinks />
+          <NavLinks footer={true} />
         </nav>
       </div>
       <!-- <div

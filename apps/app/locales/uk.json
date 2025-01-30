@@ -11,8 +11,10 @@
   "sign_in_title": "Вхід",
   "sign_in_subtitle": "Немає облікового запису? <a href=\"/sign-up\" class=\"text-green-600\">Зареєструйся</a>",
   "sign_in_button": "Увійти",
+  "sign_in_with_google_button": "Увійти з Google",
   "sign_up": "Реєстрація",
   "sign_up_title": "Реєстрація",
   "sign_up_subtitle": "Вже маєш обліковий запис? <a href=\"/sign-in\" class=\"text-green-600\">Увійди</a>",
-  "sign_up_button": "Зареєструватися"
+  "sign_up_button": "Зареєструватися",
+  "sign_up_with_google_button": "Зареєструватися з Google"
 }
