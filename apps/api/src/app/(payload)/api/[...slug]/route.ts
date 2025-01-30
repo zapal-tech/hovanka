@@ -4,8 +4,6 @@ import { REST_DELETE, REST_GET, REST_OPTIONS, REST_PATCH, REST_POST } from '@pay
 
 import config from '@api-config'
 
-export const runtime = 'edge'
-
 export const GET = REST_GET(config)
 export const POST = REST_POST(config)
 export const DELETE = REST_DELETE(config)
