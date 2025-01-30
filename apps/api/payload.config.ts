@@ -141,11 +141,11 @@ const payloadConfig: Config = {
 
         return { email: user.email, firstName: user.given_name, picture: user.picture, sub: user.sub, birthday: user.birthday }
       },
-      successRedirect: () => `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
+      successRedirect: () => `${process.env.NEXT_PUBLIC_APP_URL}`,
       failureRedirect: (req, err) => {
         req.payload.logger.error(err)
 
-        return `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}/sign-in`
+        return `${process.env.NEXT_PUBLIC_APP_URL}/sign-in`
       },
     }),
     // s3Storage({
