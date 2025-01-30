@@ -16,6 +16,3 @@ export const ensureFirstUserIsRoot: FieldHook<User> = async ({ operation, req: {
 
   if (!users.totalDocs && !(value || []).includes(UserRole.Root)) return [...(value || []), UserRole.Root]
 }
-
-export const virtualFullName: FieldHook<User, User['fullName'], User> = ({ siblingData }) =>
-  `${siblingData?.firstName}${siblingData?.lastName ? ` ${siblingData.lastName}` : ''}`

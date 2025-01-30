@@ -9,7 +9,7 @@ import { isNotDev } from '@api/utils/env'
 // import { welcomeEmail } from './hooks/welcomeEmail'
 
 import { createAccess, readAccess, updateAndDeleteAccess } from './access'
-import { ensureFirstUserIsRoot, virtualFullName } from './hooks'
+import { ensureFirstUserIsRoot } from './hooks'
 
 export const Users: CollectionConfig = {
   slug: Collection.Users,
