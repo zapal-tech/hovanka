@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
+    "build:api": "turbo build --filter @hovanka/api",
     "dev": "turbo dev",
     "format": "prettier --write \"{apps,packages,scripts}/**/*.{ts,js,json,json5,html,svelte,tsx,jsx,gql,graphql,md,css,scss,sass}\"",
     "lint": "turbo lint",
