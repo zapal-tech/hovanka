@@ -17,8 +17,6 @@ type Args = {
   children: React.ReactNode
 }
 
-export const runtime = 'edge'
-
 const serverFunction: ServerFunctionClient = async function (args) {
   'use server'
 
