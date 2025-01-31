@@ -1,6 +1,7 @@
 <script lang="ts">
+  import { PUBLIC_API_DOMAIN } from '$env/static/public'
   import Button from '$lib/components/button.svelte'
-  import Input from '$lib/components/fields/input.svelte'
+  // import Input from '$lib/components/fields/input.svelte'
   import AuthLayout from '$lib/components/layouts/auth.svelte'
   import * as m from '$lib/paraglide/messages'
 </script>
