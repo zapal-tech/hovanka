@@ -11,7 +11,9 @@
 </svelte:head>
 
 <AuthLayout title={m.sign_in_title()} subtitle={m.sign_in_subtitle()}>
-  <Button color="green" class="w-full">{m.sign_in_with_google_button()}</Button>
+  <Button color="green" class="w-full" href={`https://${PUBLIC_API_DOMAIN}/api/users/oauth/google/authorize`}
+    >{m.sign_in_with_google_button()}</Button
+  >
 
   <!-- <form>
     <div class="space-y-6">
