@@ -6,7 +6,8 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$"],
-      "outputs": [".svelte-kit/**", ".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".svelte-kit/**", ".next/**", "!.next/cache/**", "dist/**"],
+      "env": ["DATABASE_AUTH_TOKEN", "DATABASE_URL", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "SECRET", "SENDGRID_API_KEY"]
     },
     "lint": {
       "dependsOn": ["^lint"]
