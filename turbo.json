@@ -6,12 +6,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$"],
-      "outputs": [".svelte-kit/**", ".next/**", "!.next/cache/**"]
-    },
-    "build:local": {
-      "dependsOn": ["^build:local"],
-      "inputs": ["$TURBO_DEFAULT$"],
-      "outputs": [".svelte-kit/**", ".next/**", "!.next/cache/**"]
+      "outputs": [".svelte-kit/**", ".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]

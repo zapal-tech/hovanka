@@ -1,0 +1,10 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "outputs": [".svelte-kit/**"],
+      "env": ["SENDGRID_API_KEY", "SENDGRID_LIST_ID"]
+    }
+  }
+}
