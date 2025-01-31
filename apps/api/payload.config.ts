@@ -51,7 +51,7 @@ const emailAdapter =
 const dbAdapter = sqliteAdapter({
   client: {
     url: process.env.DATABASE_URL || '',
-    syncUrl: process.env.DATABASE_SYNC_URL || '',
+    syncUrl: process.env.DATABASE_SYNC_URL,
     authToken: process.env.DATABASE_AUTH_TOKEN,
   },
   prodMigrations,
