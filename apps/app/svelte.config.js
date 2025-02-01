@@ -17,7 +17,7 @@ const config = {
       routes: {
         exclude: ['<all>'],
       },
-      fallback: 'spa',
+      // fallback: 'spa',
       platformProxy: {
         persist: false,
       },
