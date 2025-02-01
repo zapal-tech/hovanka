@@ -17,6 +17,7 @@
   "sign_up_subtitle": "Вже маєш обліковий запис? <a href=\"/sign-in\" class=\"text-green-600\">Увійди</a>",
   "sign_up_button": "Зареєструватися",
   "sign_up_with_google_button": "Зареєструватися з Google",
+  "sign_out": "Вийти",
   "hi": "Привіт",
   "how_are_you_feeling_today": "Як твоє самопочуття сьогодні?",
   "hope_you_are_doing_great": "Сподіваюсь, у тебе все чудово!",
