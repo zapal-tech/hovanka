@@ -17,8 +17,6 @@ export const getMe = async ({
 }: {
   nullUserRedirect?: string | URL
   validUserRedirect?: string | URL
-  localApi?: Payload
-  cookies: Cookies
   headers: Headers
 }): Promise<Me> => {
   const userData = await me({ headers })

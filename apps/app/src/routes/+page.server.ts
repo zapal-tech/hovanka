@@ -1,12 +1,9 @@
-import { getMe } from '$lib/server/auth'
+import { redirect } from '@sveltejs/kit'
 
-export const load = async ({ cookies, request: { headers } }) => {
-  const { user, token } = await getMe({ cookies, headers })
+export const load = async ({ locals }) => {
+  const { user } = locals
 
-  return {
-    user,
-    token,
-    cookies: cookies.getAll(),
-    headers: Object.fromEntries(headers),
-  }
+  if (!user) redirect(307, '/sign-in')
+
+  return { user }
 }
