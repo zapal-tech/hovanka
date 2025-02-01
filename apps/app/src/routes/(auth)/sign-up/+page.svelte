@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PUBLIC_API_DOMAIN } from '$env/static/public'
+  import { PUBLIC_API_URL } from '$env/static/public'
   import Button from '$lib/components/button.svelte'
   // import Input from '$lib/components/fields/input.svelte'
   import AuthLayout from '$lib/components/layouts/auth.svelte'
@@ -12,7 +12,7 @@
 </svelte:head>
 
 <AuthLayout title={m.sign_up_title()} subtitle={m.sign_up_subtitle()}>
-  <Button color="green" class="w-full" href={`https://${PUBLIC_API_DOMAIN}/api/users/oauth/google/authorize`}
+  <Button color="green" class="w-full" href={`${PUBLIC_API_URL}/api/users/oauth/google/authorize`}
     >{m.sign_up_with_google_button()}</Button
   >
 

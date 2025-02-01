@@ -17,10 +17,11 @@ const config = {
       routes: {
         exclude: ['<all>'],
       },
+      fallback: 'spa',
+      platformProxy: {
+        persist: false,
+      },
     }),
-    csrf: {
-      checkOrigin: false,
-    },
     alias: {
       '@api-types': path.resolve(__dirname, '../api/src/types/generated-types.ts'),
     },
