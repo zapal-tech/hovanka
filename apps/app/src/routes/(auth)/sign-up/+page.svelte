@@ -25,4 +25,8 @@
 
     <Button type="submit" color="green" class="mt-8 w-full">{m.sign_up_button()}</Button>
   </form> -->
+
+  <p class="mt-4 text-center text-sm text-green-900">
+    {@html m.policies()}
+  </p>
 </AuthLayout>

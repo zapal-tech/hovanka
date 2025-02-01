@@ -3,8 +3,7 @@
   import CirclesBackground from '$lib/components/circles-background.svelte'
   import Logo from '$lib/components/logo.svelte'
 
-  export let title: string
-  export let subtitle: string | undefined = undefined
+  const { children, title, subtitle } = $props()
 </script>
 
 <main class="flex min-h-full overflow-hidden pt-16 sm:py-26">
@@ -28,9 +27,9 @@
     </div>
 
     <div
-      class="sm:rounded-5xl -mx-4 mt-10 flex-auto bg-white px-4 py-10 shadow-2xl shadow-green-900/10 sm:mx-0 sm:flex-none sm:p-24"
+      class="-mx-4 mt-10 flex-auto bg-transparent px-4 py-10 shadow-2xl shadow-green-900/10 sm:mx-0 sm:flex-none sm:rounded-3xl sm:bg-white sm:pt-20 sm:pb-12"
     >
-      <slot />
+      {@render children()}
     </div>
   </div>
 </main>

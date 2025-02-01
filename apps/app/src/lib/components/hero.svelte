@@ -61,8 +61,8 @@
       <div class="relative -mt-4 opacity-0 select-none lg:col-span-7 lg:mt-0 xl:col-span-6" style="opacity: 0;">
         <p class="text-center text-sm font-semibold text-green-900 lg:text-left">As featured in</p>
         <ul role="list" class="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start">
-          {#each logos as [name, logo, className]}
-            <li class="flex {className}">
+          {#each logos as [name, logo, classes]}
+            <li class={['flex', classes]}>
               <img src={logo} alt={name} class="h-8" />
             </li>
           {/each}

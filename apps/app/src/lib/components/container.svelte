@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let className: string = ''
+  const props = $props()
 </script>
 
-<div class={['mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className]} {...$$restProps}>
-  <slot />
+<div {...props} class={['mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', props.class]}>
+  {@render props.children()}
 </div>

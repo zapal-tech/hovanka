@@ -16,5 +16,13 @@
   "sign_up_title": "Реєстрація",
   "sign_up_subtitle": "Вже маєш обліковий запис? <a href=\"/sign-in\" class=\"text-green-600\">Увійди</a>",
   "sign_up_button": "Зареєструватися",
-  "sign_up_with_google_button": "Зареєструватися з Google"
+  "sign_up_with_google_button": "Зареєструватися з Google",
+  "hi": "Привіт",
+  "how_are_you_feeling_today": "Як твоє самопочуття сьогодні?",
+  "hope_you_are_doing_great": "Сподіваюсь, у тебе все чудово!",
+  "menu_home": "Головна",
+  "menu_mood": "Настрій",
+  "menu_journal": "Щоденник",
+  "menu_settings": "Налаштування",
+  "policies": "Прочитайте нашу <a href=\"https://www.hovanka.app/privacy-policy\" target=\"_blank\" class=\"text-green-600\">політику конфіденційності</a> та <a href=\"https://www.hovanka.app/terms-of-use\" target=\"_blank\" class=\"text-green-600\">умови використання</a>"
 }
