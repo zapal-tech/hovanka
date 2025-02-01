@@ -5,6 +5,7 @@
   let { data }: PageProps = $props()
 </script>
 
+<span>{JSON.stringify(data)}</span>
 {#if data.user}
   <h1>Hi, {data.user.firstName}!</h1>
 {:else}

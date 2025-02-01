@@ -8,14 +8,15 @@ const apiUrl = `${PUBLIC_API_URL}/api`
 const authApiUrl = `${apiUrl}/users`
 
 export const me = async ({ headers }: { headers: Headers }) => {
-  headers.set('Content-Type', 'application/json')
-
   let data: (MeOperationResult & { user: User }) | null = null
 
   try {
     const response = await fetch(`${authApiUrl}/me`, {
       method: 'GET',
-      headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Cookie: headers.get('cookie') || '',
+      },
     })
 
     if (!response.ok) throw new Error('Failed to get user')
