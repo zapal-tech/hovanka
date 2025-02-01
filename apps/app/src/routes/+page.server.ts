@@ -1,5 +1,3 @@
-import { tokenCookieName } from '@hovanka/shared/cookies'
-
 import { getMe } from '$lib/server/auth'
 
 export const load = async ({ cookies, request: { headers } }) => {
@@ -8,8 +6,7 @@ export const load = async ({ cookies, request: { headers } }) => {
   return {
     user,
     token,
-    cookieName: tokenCookieName,
-    cookieVal: cookies.get(tokenCookieName),
+    cookies: cookies.getAll(),
     headers: Object.fromEntries(headers),
   }
 }
