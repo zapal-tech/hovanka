@@ -17,6 +17,7 @@ export const me = async ({ headers }: { headers: Headers }) => {
   try {
     const response = await fetch(`${authApiUrl}/me`, {
       method: 'GET',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: token ? `${tokenCookieName}=${token}` : '',
