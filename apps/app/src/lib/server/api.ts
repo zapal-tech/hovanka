@@ -12,11 +12,14 @@ export const me = async ({ headers }: { headers: Headers }) => {
 
   let data: (MeOperationResult & { user: User }) | null = null
 
+  console.log(Object.fromEntries(headers.entries()))
+
   try {
     const response = await fetch(`${authApiUrl}/me`, {
       method: 'GET',
-      credentials: 'include',
-      headers,
+      headers: {
+        ...Object.fromEntries(headers.entries()),
+      },
     })
 
     if (!response.ok) throw new Error('Failed to get user')
