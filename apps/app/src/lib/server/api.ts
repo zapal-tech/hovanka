@@ -1,5 +1,7 @@
 import type { MeOperationResult } from 'payload'
 
+import { tokenCookieName } from '@hovanka/shared/cookies'
+
 import type { User } from '@api-types'
 
 import { PUBLIC_API_URL } from '$env/static/public'
@@ -8,6 +10,8 @@ const apiUrl = `${PUBLIC_API_URL}/api`
 const authApiUrl = `${apiUrl}/users`
 
 export const me = async ({ headers }: { headers: Headers }) => {
+  const token = headers.get(tokenCookieName)
+
   let data: (MeOperationResult & { user: User }) | null = null
 
   try {
@@ -15,7 +19,7 @@ export const me = async ({ headers }: { headers: Headers }) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Cookie: headers.get('cookie') || '',
+        Cookie: token ? `${tokenCookieName}=${token}` : '',
       },
     })
 
