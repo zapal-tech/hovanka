@@ -59,7 +59,9 @@
             <Icon />
           {/if}
 
-          <span class="text-center text-xs font-light text-green-900 sm:text-sm">{name}</span>
+          <span class={['text-center text-xs text-green-900 sm:text-sm', isActiveFunction() ? 'font-normal' : 'font-light']}
+            >{name}</span
+          >
         </a>
       </li>
     {/each}
