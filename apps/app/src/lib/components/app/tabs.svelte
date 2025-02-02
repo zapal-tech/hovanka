@@ -48,8 +48,16 @@
   ]
 </script>
 
-<div class="p2-4 fixed bottom-0 w-full rounded-tl-3xl rounded-tr-3xl bg-green-300 py-4 sm:px-6">
+<div class="fixed bottom-0 w-full rounded-tl-3xl rounded-tr-3xl bg-green-300 px-4 py-4 sm:px-6">
   <ul class="grid grid-cols-4 gap-2">
+    <li class="absolute top-0 left-1/2 -translate-1/2">
+      <a
+        href="/emergency-room"
+        class="flex size-12 items-center justify-center rounded-full border-4 border-green-50 bg-red-500 text-center text-xs font-semibold text-green-50 sm:size-16 md:size-18 lg:size-20 lg:border-[6px]"
+        aria-label="Emergency room"
+      ></a>
+    </li>
+
     {#each tabs as { name, href, icon: Icon, activeIcon: ActiveIcon, isActiveFunction }}
       <li class="relative">
         <a {href} class={['flex flex-col items-center justify-center gap-1']}>

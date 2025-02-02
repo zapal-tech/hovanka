@@ -80,31 +80,15 @@ export const Users: CollectionConfig = {
         beforeChange: [ensureFirstUserIsRoot],
       },
     },
-    // onboardingStep - number, features - group, features: { moodTracker - boolean }
     {
-      type: 'select',
-      name: 'language',
+      type: 'join',
+      name: 'journalNotes',
       label: {
-        en: 'Language',
-        uk: 'Мова',
+        en: 'Journal Notes',
+        uk: 'Нотатки з щоденника',
       },
-      defaultValue: Locale.English,
-      options: [
-        {
-          label: {
-            en: 'English',
-            uk: 'Англійська',
-          },
-          value: Locale.English,
-        },
-        {
-          label: {
-            en: 'Ukrainian',
-            uk: 'Українська',
-          },
-          value: Locale.Ukrainian,
-        },
-      ],
+      collection: Collection.Journals,
+      on: 'user',
     },
     {
       name: 'onboardingCompleted',

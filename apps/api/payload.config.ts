@@ -14,7 +14,7 @@ import { uk } from 'payload/i18n/uk'
 import { appName } from '@hovanka/shared/app'
 import { cookiesName } from '@hovanka/shared/cookies'
 import { cmsSenderEmail, cmsSenderName } from '@hovanka/shared/email'
-import { defaultLocale } from '@hovanka/shared/i18n'
+import { defaultLocale, Locale } from '@hovanka/shared/i18n'
 import { Collection, UserRole } from '@hovanka/shared/types'
 
 import { AppUsageGoals } from '@api/collections/AppUsageGoals'
@@ -23,6 +23,8 @@ import { Users } from '@api/collections/Users'
 import { getDefaultEditor } from '@api/editor'
 import { cmsLocales } from '@api/i18n'
 import { isDev } from '@api/utils/env'
+
+import { migrations as prodMigrations } from './src/migrations'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -52,7 +54,7 @@ const dbAdapter = sqliteAdapter({
     syncUrl: process.env.DATABASE_SYNC_URL,
     authToken: process.env.DATABASE_AUTH_TOKEN,
   },
-  // prodMigrations,
+  prodMigrations,
   migrationDir: path.resolve(__dirname, 'src', 'migrations'),
 })
 
@@ -137,11 +139,24 @@ const payloadConfig: Config = {
         const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
+
         const user = await response.json()
 
-        return { email: user.email, firstName: user.given_name, picture: user.picture, sub: user.sub, birthday: user.birthday }
+        return {
+          email: user?.email,
+          firstName: user?.given_name,
+          picture: user?.picture,
+          sub: user?.sub,
+          birthday: user?.birthday,
+          locale:
+            user?.locale && typeof user.locale === 'string'
+              ? /^(uk|ru)-/.test(user.locale as string)
+                ? Locale.Ukrainian
+                : Locale.English
+              : undefined,
+        }
       },
-      successRedirect: () => `${process.env.NEXT_PUBLIC_APP_URL}`,
+      successRedirect: () => process.env.NEXT_PUBLIC_APP_URL || '',
       failureRedirect: (req, err) => {
         req.payload.logger.error(err)
 

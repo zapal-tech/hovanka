@@ -21,6 +21,7 @@ export const Journals: CollectionConfig = {
       type: 'relationship',
       name: 'user',
       relationTo: Collection.Users,
+      required: true,
     },
     {
       type: 'select',

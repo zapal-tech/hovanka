@@ -18,7 +18,11 @@ export interface Config {
     'payload-preferences': PayloadPreference
     'payload-migrations': PayloadMigration
   }
-  collectionsJoins: {}
+  collectionsJoins: {
+    users: {
+      journalNotes: 'journals'
+    }
+  }
   collectionsSelect: {
     journals: JournalsSelect<false> | JournalsSelect<true>
     appUsageGoals: AppUsageGoalsSelect<false> | AppUsageGoalsSelect<true>
@@ -67,7 +71,7 @@ export interface Journal {
   id: number
   title?: string | null
   content?: string | null
-  user?: (number | null) | User
+  user: number | User
   type?: ('journal' | 'mood-tracker') | null
   mood?: ('happy' | 'sad' | 'angry' | 'anxious' | 'neutral') | null
   updatedAt: string
@@ -81,7 +85,10 @@ export interface User {
   id: number
   firstName: string
   roles: ('root' | 'user')[]
-  language?: ('en' | 'uk') | null
+  journalNotes?: {
+    docs?: (number | Journal)[] | null
+    hasNextPage?: boolean | null
+  } | null
   onboardingCompleted?: boolean | null
   onboardingStep?: ('nameAndAge' | 'moodTrackerFeature' | 'appUsageGoals') | null
   features?: {
@@ -199,7 +206,7 @@ export interface AppUsageGoalsSelect<T extends boolean = true> {
 export interface UsersSelect<T extends boolean = true> {
   firstName?: T
   roles?: T
-  language?: T
+  journalNotes?: T
   onboardingCompleted?: T
   onboardingStep?: T
   features?:

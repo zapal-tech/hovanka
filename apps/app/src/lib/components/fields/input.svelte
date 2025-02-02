@@ -4,20 +4,32 @@
   import { formClasses } from './classes'
   import Label from './label.svelte'
 
-  export let label: string | undefined = undefined
-  export let type: string = 'text'
-
-  let id: string
+  let id: string | undefined = $state(undefined)
 
   onMount(() => {
     if (!id) id = `input-${Math.random().toString(36).slice(2, 10)}`
   })
+
+  const {
+    label,
+    type = 'text',
+    ...props
+  }: {
+    name: string
+    label?: string
+    type: 'text' | 'textarea'
+    class?: string
+  } = $props()
 </script>
 
-<div class={$$restProps.class}>
-  {#if label}
+<div class={props.class}>
+  {#if label && id}
     <Label {id} text={label} />
   {/if}
 
-  <input {id} {type} {...$$restProps} class={formClasses} />
+  {#if type === 'textarea'}
+    <textarea {id} cols="1" {...props} class={formClasses}></textarea>
+  {:else}
+    <input {id} {type} {...props} class={formClasses} />
+  {/if}
 </div>

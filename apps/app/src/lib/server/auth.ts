@@ -3,14 +3,14 @@ import type { Payload } from 'payload'
 
 import type { User } from '@api-types'
 
-import { me } from './api'
+import { getMe } from './api'
 
 export type Me = {
   user: User | null
   token?: string
 }
 
-export const getMe = async ({
+export const getCurrentUser = async ({
   nullUserRedirect,
   validUserRedirect,
   headers,
@@ -19,7 +19,7 @@ export const getMe = async ({
   validUserRedirect?: string | URL
   headers: Headers
 }): Promise<Me> => {
-  const userData = await me({ headers })
+  const userData = await getMe({ headers })
 
   if (!userData) {
     if (nullUserRedirect) redirect(307, nullUserRedirect)

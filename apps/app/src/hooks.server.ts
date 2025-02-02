@@ -5,7 +5,7 @@ import { sequence } from '@sveltejs/kit/hooks'
 import { tokenCookieName } from '@hovanka/shared/cookies'
 
 import * as runtime from '$lib/paraglide/runtime'
-import { getMe } from '$lib/server/auth'
+import { getCurrentUser } from '$lib/server/auth'
 
 // import { i18n } from '$lib/i18n'
 
@@ -27,7 +27,7 @@ const userHandle: Handle = async ({
   },
   resolve,
 }) => {
-  if (cookies.get(tokenCookieName)) event.locals.user = (await getMe({ headers })).user
+  if (cookies.get(tokenCookieName)) event.locals.user = (await getCurrentUser({ headers })).user
 
   return resolve(event)
 }
