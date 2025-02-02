@@ -24,8 +24,6 @@ import { getDefaultEditor } from '@api/editor'
 import { cmsLocales } from '@api/i18n'
 import { isDev } from '@api/utils/env'
 
-import { migrations as prodMigrations } from './src/migrations'
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const email = process.env.USER_EMAIL || 'hello@hovanka.app'
@@ -54,7 +52,7 @@ const dbAdapter = sqliteAdapter({
     syncUrl: process.env.DATABASE_SYNC_URL,
     authToken: process.env.DATABASE_AUTH_TOKEN,
   },
-  prodMigrations,
+  // prodMigrations,
   migrationDir: path.resolve(__dirname, 'src', 'migrations'),
 })
 
