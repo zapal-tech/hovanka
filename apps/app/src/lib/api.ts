@@ -19,7 +19,6 @@ export const getMe = async ({ headers }: { headers: Headers }): Promise<GetMeRes
   try {
     const response = await fetch(`${authCollectionApiUrl}/me`, {
       method: 'GET',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers.get('cookie') || '',
