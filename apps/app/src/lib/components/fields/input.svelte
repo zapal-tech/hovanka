@@ -19,7 +19,7 @@
     label?: string
     type: 'text' | 'textarea'
     class?: string
-  } = $props()
+  } & Record<string, unknown> = $props()
 </script>
 
 <div class={props.class}>
@@ -28,7 +28,7 @@
   {/if}
 
   {#if type === 'textarea'}
-    <textarea {id} cols="1" {...props} class={formClasses}></textarea>
+    <textarea {id} {...props} class={formClasses}></textarea>
   {:else}
     <input {id} {type} {...props} class={formClasses} />
   {/if}

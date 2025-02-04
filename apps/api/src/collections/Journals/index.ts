@@ -2,12 +2,22 @@ import { CollectionConfig } from 'payload'
 
 import { Collection, CollectionLabel } from '@hovanka/shared/types'
 
-// import { welcomeEmail } from './hooks/welcomeEmail'
+import { createAccess, readAccess, updateAndDeleteAccess } from './access'
+import { setJournalOwner } from './hooks'
 
 export const Journals: CollectionConfig = {
   slug: Collection.Journals,
   labels: CollectionLabel.Journals,
   timestamps: true,
+  access: {
+    read: readAccess,
+    create: createAccess,
+    update: updateAndDeleteAccess,
+    delete: updateAndDeleteAccess,
+  },
+  hooks: {
+    beforeValidate: [setJournalOwner],
+  },
   fields: [
     {
       type: 'text',
@@ -22,6 +32,8 @@ export const Journals: CollectionConfig = {
       name: 'user',
       relationTo: Collection.Users,
       required: true,
+      index: true,
+      validate: () => true as const,
     },
     {
       type: 'select',

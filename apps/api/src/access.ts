@@ -1,4 +1,4 @@
-import { Access, User as AuthUser, FieldAccess } from 'payload'
+import { Access, User as AuthUser, FieldAccess, PayloadRequest } from 'payload'
 
 import { UserRole } from '@hovanka/shared/types'
 
@@ -15,6 +15,7 @@ export const checkUserRoles = (allRoles: User['roles'] = [], user?: User | AuthU
 export const anyone: Access = () => true
 
 export const rootUsers: Access = ({ req: { user } }) => isRootUser(user)
+export const rootUsersAdminAccess = ({ req: { user } }: { req: PayloadRequest }): boolean => isRootUser(user)
 
 // Fields
 

@@ -1,9 +1,8 @@
-import { redirect, type Cookies } from '@sveltejs/kit'
-import type { Payload } from 'payload'
+import { redirect } from '@sveltejs/kit'
 
 import type { User } from '@api-types'
 
-import { getMe } from './api'
+import { getMe } from '../api'
 
 export type Me = {
   user: User | null

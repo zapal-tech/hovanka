@@ -3,7 +3,7 @@ import { CollectionConfig } from 'payload'
 import { Locale } from '@hovanka/shared/i18n'
 import { Collection, CollectionLabel, UserRole } from '@hovanka/shared/types'
 
-import { rootUsersFieldAccess } from '@api/access'
+import { rootUsers, rootUsersAdminAccess, rootUsersFieldAccess } from '@api/access'
 import { isNotDev } from '@api/utils/env'
 
 // import { welcomeEmail } from './hooks/welcomeEmail'
@@ -33,6 +33,7 @@ export const Users: CollectionConfig = {
     create: createAccess,
     update: updateAndDeleteAccess,
     delete: updateAndDeleteAccess,
+    admin: rootUsersAdminAccess,
   },
   timestamps: true,
   fields: [

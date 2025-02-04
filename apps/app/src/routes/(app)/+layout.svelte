@@ -1,17 +1,20 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition'
-
   import Tabs from '$lib/components/app/tabs.svelte'
+  import PageTransition from '$lib/components/page-transition.svelte'
+  import * as m from '$lib/paraglide/messages'
 
   const { data, children } = $props()
 </script>
 
+<svelte:head>
+  <title>{m.name()} - {m.tagline()}</title>
+  <meta name="description" content={m.description()} />
+</svelte:head>
+
 <main class="h-dvh overflow-hidden bg-gradient-to-b from-green-200 via-emerald-200 to-green-100">
-  {#key data.pathname}
-    <div in:fly={{ x: -200, duration: 350, delay: 350 }} out:fly={{ x: 200, duration: 350 }} class="p-4 sm:p-8">
-      {@render children()}
-    </div>
-  {/key}
+  <PageTransition pathname={data.pathname}>
+    {@render children()}
+  </PageTransition>
 
   <Tabs />
 </main>

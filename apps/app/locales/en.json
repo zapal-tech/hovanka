@@ -25,5 +25,9 @@
   "menu_mood": "Mood",
   "menu_journal": "Journal",
   "menu_settings": "Settings",
-  "policies": "Read our <a href=\"https://www.hovanka.app/privacy-policy\" target=\"_blank\" class=\"text-green-600\">Privacy Policy</a> and <a href=\"https://www.hovanka.app/terms-of-use\" target=\"_blank\" class=\"text-green-600\">Terms of Use</a>"
+  "policies": "Read our <a href=\"https://www.hovanka.app/privacy-policy\" target=\"_blank\" class=\"text-green-600\">Privacy Policy</a> and <a href=\"https://www.hovanka.app/terms-of-use\" target=\"_blank\" class=\"text-green-600\">Terms of Use</a>",
+  "save": "Save",
+  "journal_title": "Journal",
+  "journal_subtitle": "Write down your thoughts and feelings here",
+  "journal_input": "Write down your thoughts..."
 }
