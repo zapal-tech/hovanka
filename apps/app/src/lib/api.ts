@@ -59,7 +59,6 @@ export const getPreference = async <T extends string>({
   try {
     const response = await fetch(`${apiUrl}/payload-preferences/${encodeURIComponent(key)}`, {
       method: 'GET',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers.get('cookie') || '',
@@ -98,7 +97,6 @@ export const setPreference = async <T extends string>({
   try {
     const response = await fetch(`${apiUrl}/payload-preferences/${encodeURIComponent(key)}`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers.get('cookie') || '',
@@ -127,7 +125,6 @@ export const updateProfile = async ({ headers }: { headers: Headers }) => {
   try {
     const response = await fetch(`${authCollectionApiUrl}/me`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers.get('cookie') || '',
@@ -210,7 +207,7 @@ export const createJournal = async ({ headers, content }: { headers?: Headers; c
   try {
     const response = await fetch(`${apiUrl}/journals`, {
       method: 'POST',
-      credentials: 'include',
+      credentials: headers ? undefined : 'include',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers?.get('cookie') || '',
