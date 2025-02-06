@@ -27,6 +27,5 @@ export default defineConfig({
       compressionLevel: 9,
     },
   },
-  manifestIconsEntry: false,
   images: 'static/logo.svg',
 })

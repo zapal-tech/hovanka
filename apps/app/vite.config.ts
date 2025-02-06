@@ -48,7 +48,6 @@ export default defineConfig({
       },
       pwaAssets: {
         config: './pwa-assets.config.ts',
-        overrideManifestIcons: true,
       },
     }),
   ],
