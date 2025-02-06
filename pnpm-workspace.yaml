@@ -31,6 +31,8 @@ catalog:
   '@types/node': ^22.10.10
   '@types/react': ^19.0.8
   '@types/react-dom': ^19.0.3
+  '@vite-pwa/assets-generator': ^0.2.6
+  '@vite-pwa/sveltekit': ^0.6.7
   '@zapal/dx': ^1.2.0
   '@zapal/payload-email-sendgrid': ^1.0.6
   dotenv: ^16.4.7
@@ -44,6 +46,7 @@ catalog:
   prettier-plugin-tailwindcss: ^0.6.11
   react: ^19.0.0
   'react-dom': ^19.0.0
+  sharp: ^0.33.5
   svelte: ^5.19.2
   svelte-check: ^4.1.4
   svelte-headlessui: ^0.0.46
