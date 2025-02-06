@@ -1,12 +1,11 @@
 <script lang="ts">
-  export let width: number = 40
-  export let height: number = 40
+  const { width = 40, height = 40, ...props }: { width?: number; height?: number; class?: string } = $props()
 </script>
 
-<svg {width} {height} viewBox="0 0 40 40" aria-hidden={true} {...$$restProps}>
+<svg {...props} {width} {height} viewBox="0 0 28.575 28.575" aria-hidden={true}>
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
-    d="M20 40C8.954 40 0 31.046 0 20S8.954 0 20 0s20 8.954 20 20-8.954 20-20 20ZM4 20c0 7.264 5.163 13.321 12.02 14.704C17.642 35.03 19 33.657 19 32V8c0-1.657-1.357-3.031-2.98-2.704C9.162 6.68 4 12.736 4 20Z"
+    d="M14.287 1.777c-.37 0-.71.197-.896.517L.141 25.246c-.4.69.099 1.552.895 1.552H6.75a1.477 1.477 0 0 0 1.28-.739l5.363-9.29a1.034 1.034 0 0 1 1.791 0l5.364 9.29a1.477 1.477 0 0 0 1.279.739h5.713c.796 0 1.294-.862.896-1.552L15.184 2.294a1.035 1.035 0 0 0-.897-.517z"
   />
 </svg>

@@ -29,7 +29,7 @@
     <Container class="relative z-50 mx-auto flex max-w-7xl justify-between px-4 py-8 sm:px-6 lg:px-8">
       <div class="relative z-10 flex items-center gap-16">
         <a href="/" aria-label="Home">
-          <Logo class="h-10 w-auto" />
+          <Logo class="h-9 w-auto" />
         </a>
 
         <div class="hidden lg:flex lg:gap-10">
