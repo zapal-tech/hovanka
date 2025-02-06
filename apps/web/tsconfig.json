@@ -1,3 +1,6 @@
 {
-  "extends": ["@zapal/dx/typescript/svelte", "./.svelte-kit/tsconfig.json"]
+  "extends": ["@zapal/dx/typescript/svelte", "./.svelte-kit/tsconfig.json"],
+  "compilerOptions": {
+    "types": ["vite-plugin-pwa/info", "vite-plugin-pwa/pwa-assets", "vite-plugin-pwa/client"]
+  }
 }

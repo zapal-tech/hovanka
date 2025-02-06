@@ -10,7 +10,6 @@ export default defineConfig({
     sveltekit(),
     tailwindcss(),
     SvelteKitPWA({
-      includeAssets: ['favicon.svg', 'favicon.ico', 'maskable-icon-512x512.png', 'apple-touch-icon.png'],
       manifestFilename: 'site.webmanifest',
       manifest: {
         name: 'Hovanka - Mental Health app',
@@ -18,7 +17,6 @@ export default defineConfig({
         description: 'Mental health app for tracking your mood and emotions',
         orientation: 'portrait',
         categories: ['health', 'mental health'],
-        id: 'app.hovanka.try',
         theme_color: '#24a684',
         background_color: '#eefbf6',
         icons: [
@@ -26,16 +24,25 @@ export default defineConfig({
             src: 'pwa-64x64.png',
             sizes: '64x64',
             type: 'image/png',
+            purpose: 'any',
           },
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png',
+            purpose: 'any',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: 'maskable-icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
           },
         ],
       },
