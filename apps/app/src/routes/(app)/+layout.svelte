@@ -11,7 +11,7 @@
   <meta name="description" content={m.description()} />
 </svelte:head>
 
-<main class="h-dvh overflow-hidden bg-gradient-to-b from-green-200 via-emerald-200 to-green-100">
+<main class="h-dvh overflow-hidden bg-gradient-to-b from-green-100 to-green-50">
   <PageTransition pathname={data.pathname}>
     {@render children()}
   </PageTransition>

@@ -1,8 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "name": "Hovanka",
-  "tagline": "Your mental health guide",
-  "description": "Hovanka is an app that supports you and your mental health, always by your side",
+  "tagline": "Your Daily Buddy for Mental Wellness",
+  "description": "In a world that never slows down, your mental health matters more than ever.\nHovanka is more than an app – it's your personal guide to understanding, nurturing, and strengthening your mental wellness.\n\nWe're not just about providing practical tools. Our mission is to help you truly understand yourself. We want to enhance your self-awareness and give you deeper insights into your mind's inner workings.",
   "email": "hello@hovanka.app",
   "input_email_address": "Email address",
   "input_password": "Password",

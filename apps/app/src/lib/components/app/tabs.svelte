@@ -60,14 +60,14 @@
 
     {#each tabs as { name, href, icon: Icon, activeIcon: ActiveIcon, isActiveFunction }}
       <li class="relative">
-        <a {href} class={['flex flex-col items-center justify-center gap-1']}>
+        <a {href} class={['flex flex-col items-center justify-center gap-1 text-green-950']}>
           {#if isActiveFunction()}
             <ActiveIcon />
           {:else}
             <Icon />
           {/if}
 
-          <span class={['text-center text-xs text-green-900 sm:text-sm', isActiveFunction() ? 'font-normal' : 'font-light']}
+          <span class={['text-center text-xs text-green-950 sm:text-sm', isActiveFunction() ? 'font-normal' : 'font-light']}
             >{name}</span
           >
         </a>

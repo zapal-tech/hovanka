@@ -36,7 +36,7 @@
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
       <div class="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
         <h1 class="text-4xl font-medium tracking-tight text-green-900">{m.tagline()}.</h1>
-        <p class="mt-6 text-lg text-green-600">{m.description()}</p>
+        <p class="mt-6 text-lg whitespace-pre-line text-green-600">{m.description()}</p>
         <div class="mt-8 flex flex-wrap gap-x-6 gap-y-4">
           <!-- <PlayStoreLink />
           <AppStoreLink />

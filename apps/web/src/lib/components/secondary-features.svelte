@@ -18,7 +18,7 @@
   <Container>
     <div class="mx-auto max-w-2xl sm:text-center">
       <h2 class="text-3xl font-medium tracking-tight text-green-900">{m.secondary_features_title()}</h2>
-      <p class="mt-2 text-lg text-green-600">
+      <p class="mt-2 text-lg whitespace-pre-line text-green-600">
         {m.secondary_features_description()}
       </p>
     </div>
