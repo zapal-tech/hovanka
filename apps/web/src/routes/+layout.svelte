@@ -18,18 +18,15 @@
 <svelte:head>
   <!-- Google tag (gtag.js) -->
   <script async src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GTAG_ID}`}></script>
-  <script>
-    {
-      ;`
+  {@html `<script>
     window.dataLayer = window.dataLayer || []
     function gtag() {
       dataLayer.push(arguments)
     }
     gtag('js', new Date())
 
-    gtag('config', ${PUBLIC_GTAG_ID})`
-    }
-  </script>
+    gtag('config', ${PUBLIC_GTAG_ID})
+  </script>`}
 
   {@html webManifestLink}
   {#if pwaAssetsHead.themeColor}
