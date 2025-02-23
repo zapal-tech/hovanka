@@ -50,7 +50,7 @@
     }
     gtag('js', new Date())
 
-    gtag('config', ${PUBLIC_GTAG_ID})
+    gtag('config', '${PUBLIC_GTAG_ID}')
   </script>`}
 
   {@html webManifestLink}
