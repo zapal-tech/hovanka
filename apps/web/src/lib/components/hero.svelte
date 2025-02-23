@@ -42,11 +42,7 @@
           <!-- <PlayStoreLink />
           <AppStoreLink /> -->
 
-          <Button
-            href={`${m.hero_button_url().startsWith('/') ? `https://${PUBLIC_WWW_DOMAIN}` : ''}${m.hero_button_url()}`}
-            variant="outline"
-            target="_blank"
-          >
+          <Button href={`${m.hero_button_url()}`} variant="outline" target="_blank">
             <PlayIcon class="h-6 w-6 flex-none" />
             <span class="ml-2.5">{m.hero_button_text()}</span>
           </Button>
