@@ -8,12 +8,26 @@
 
   import '../app.css'
 
+  import { PUBLIC_GTAG_ID } from '$env/static/public'
+
   const webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 
   const { children } = $props()
 </script>
 
 <svelte:head>
+  <!-- Google tag (gtag.js) -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GTAG_ID}`}></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', PUBLIC_GTAG_ID)
+  </script>
+
   {@html webManifestLink}
   {#if pwaAssetsHead.themeColor}
     <meta name="theme-color" content={pwaAssetsHead.themeColor.content} />
