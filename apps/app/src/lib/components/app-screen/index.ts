@@ -1,5 +1,0 @@
-export { default as AppScreen } from './index.svelte'
-export { default as AppScreenBody } from './body.svelte'
-export { default as AppScreenTitle } from './title.svelte'
-export { default as AppScreenSubtitle } from './subtitle.svelte'
-export { default as AppScreenHeader } from './header.svelte'

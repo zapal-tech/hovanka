@@ -7,7 +7,7 @@ import * as runtime from '$lib/paraglide/runtime'
 
 // Bypass i18n for /api routes
 export const reroute: Reroute = (event) => {
-  if (event.url.pathname.startsWith('/api')) return
+  if (event.url.pathname.startsWith('/api') || event.url.pathname.endsWith('.pdf')) return
 
   return createI18n(runtime, { prefixDefaultLanguage: 'always' }).reroute()(event)
 }

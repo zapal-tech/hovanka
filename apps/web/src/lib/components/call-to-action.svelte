@@ -9,9 +9,9 @@
 </script>
 
 <section class="relative overflow-hidden bg-green-900 py-20 sm:py-28">
-  <div class="absolute top-1/2 left-20 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
+  <!-- <div class="absolute top-1/2 left-20 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
     <CircleBackground color="#fff" class="animate-spin-slower" />
-  </div>
+  </div> -->
   <Container class="relative">
     <div class="mx-auto max-w-md sm:text-center">
       <h2 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">{m.cta_title()}</h2>

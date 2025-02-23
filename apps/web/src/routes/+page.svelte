@@ -15,8 +15,8 @@
 
 <Layout>
   <Hero />
-  <SecondaryFeatures />
   <CallToAction />
+  <SecondaryFeatures />
   <Pricing />
   <Faqs />
 </Layout>

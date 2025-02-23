@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { PUBLIC_WWW_DOMAIN } from '$env/static/public'
   import logoBbc from '$lib/assets/logos/bbc.svg'
   import logoCbs from '$lib/assets/logos/cbs.svg'
   import logoCnn from '$lib/assets/logos/cnn.svg'
@@ -14,8 +15,8 @@
   import Button from './button.svelte'
   import Container from './container.svelte'
   import BackgroundIllustration from './hero-background-illustration.svelte'
+  import PlayIcon from './icons/play.svelte'
 
-  // import PlayIcon from './icons/play.svelte'
   // import PhoneFrame from './phone-frame.svelte'
   // import PlayStoreLink from './play-store-link.svelte'
 
@@ -39,11 +40,16 @@
         <p class="mt-6 text-lg whitespace-pre-line text-green-600">{m.description()}</p>
         <div class="mt-8 flex flex-wrap gap-x-6 gap-y-4">
           <!-- <PlayStoreLink />
-          <AppStoreLink />
-          <Button href={m.video_url()} variant="outline">
+          <AppStoreLink /> -->
+
+          <Button
+            href={`${m.hero_button_url().startsWith('/') ? `https://${PUBLIC_WWW_DOMAIN}` : ''}${m.hero_button_url()}`}
+            variant="outline"
+            target="_blank"
+          >
             <PlayIcon class="h-6 w-6 flex-none" />
-            <span class="ml-2.5">{m.video_watch()}</span>
-          </Button> -->
+            <span class="ml-2.5">{m.hero_button_text()}</span>
+          </Button>
         </div>
       </div>
       <div class="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">

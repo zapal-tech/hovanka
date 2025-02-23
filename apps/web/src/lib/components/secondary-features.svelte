@@ -6,12 +6,18 @@
   import Container from './container.svelte'
 
   interface Feature {
-    name: string
+    title: string
     description: string
-    icon: Component
+    // icon: Component
   }
 
-  export let features: Feature[] = []
+  const features: Feature[] = Array.from(Array(50), () => null)
+    .map((_value, idx) => ({
+      // icon: Container,
+      title: (m as Record<string, (() => string) | undefined>)?.[`secondary_features_${idx}_title`]?.(),
+      description: (m as Record<string, (() => string) | undefined>)?.[`secondary_features_${idx}_description`]?.(),
+    }))
+    .filter((feature) => feature.title && feature.description) as Feature[]
 </script>
 
 <section id="features" aria-label="Features for building a portfolio" class="py-20 sm:py-32">
@@ -27,10 +33,10 @@
       class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
     >
       {#each features as feature}
-        <li class="rounded-2xl border border-green-200 p-8">
-          <svelte:component this={feature.icon} class="h-8 w-8" />
-          <h3 class="mt-6 font-semibold text-green-900">{feature.name}</h3>
-          <p class="mt-2 text-green-700">{feature.description}</p>
+        <li class="rounded-2xl border border-green-200 p-6">
+          <!-- <svelte:component this={feature.icon} class="h-8 w-8 mb-6" /> -->
+          <h3 class="mb-2 font-semibold text-green-900">{feature.title}</h3>
+          <p class="text-green-700">{feature.description}</p>
         </li>
       {/each}
     </ul>
