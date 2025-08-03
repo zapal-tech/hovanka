@@ -8,7 +8,7 @@
   const languages = runtime.availableLanguageTags
 </script>
 
-<ul class={['flex gap-5 lg:gap-3', $$restProps.class]}>
+<ul class={['flex gap-5 lg:gap-1', $$restProps.class]}>
   {#each languages as lang}
     <li>
       <a

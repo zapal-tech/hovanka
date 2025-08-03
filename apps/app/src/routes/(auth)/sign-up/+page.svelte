@@ -11,7 +11,10 @@
   <meta name="description" content={m.description()} />
 </svelte:head>
 
-<AuthLayout title={m.sign_up_title()} subtitle={m.sign_up_subtitle()}>
+<AuthLayout subtitle={m.sign_up_subtitle()} subtitlePosition="bottom">
+  <h1 class="mb-4 text-center text-2xl font-semibold whitespace-pre-line text-green-900">{m.sign_up_title()}</h1>
+  <img src="/hovanka-illustration.svg" alt={m.sign_up_title()} class="mx-auto mt-4 mb-8 h-auto w-48 sm:mt-8 sm:mb-12 sm:w-64" />
+
   <Button color="green" class="w-full" href={`${PUBLIC_API_URL}/api/users/oauth/google/authorize`}
     >{m.sign_up_with_google_button()}</Button
   >

@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload'
 
 import { Locale } from '@hovanka/shared/i18n'
 import { Collection, CollectionLabel, UserRole } from '@hovanka/shared/types'
+import { OnboardingStep } from '@hovanka/shared/types/onboarding'
 
 import { rootUsers, rootUsersAdminAccess, rootUsersFieldAccess } from '@api/access'
 import { isNotDev } from '@api/utils/env'
@@ -92,6 +93,17 @@ export const Users: CollectionConfig = {
       on: 'user',
     },
     {
+      type: 'join',
+      name: 'onboardingForm',
+      label: {
+        en: 'Onboarding Form',
+        uk: 'Onboarding форма',
+      },
+      collection: Collection.OnboardingFormSubmissions,
+      on: 'user',
+      defaultLimit: 1,
+    },
+    {
       name: 'onboardingCompleted',
       type: 'checkbox',
     },
@@ -101,34 +113,31 @@ export const Users: CollectionConfig = {
       options: [
         {
           label: {
-            en: 'Name and age',
-            uk: "Ім'я та вік",
+            en: 'User goals',
+            uk: 'Цілі користувача',
           },
-          value: 'nameAndAge',
+          value: OnboardingStep.UserGoals,
         },
         {
           label: {
-            en: 'moodTrackerFeature',
-            uk: 'Опція "Трекер настрою"',
+            en: 'Emotional state',
+            uk: 'Емоційний стан',
           },
-          value: 'moodTrackerFeature',
+          value: OnboardingStep.InitialEmotionalState,
         },
         {
           label: {
-            en: 'App usage goals',
-            uk: 'Цілі використання додатку',
+            en: 'Wanted features',
+            uk: 'Бажані функції',
           },
-          value: 'appUsageGoals',
+          value: OnboardingStep.WantedFeatures,
         },
-      ],
-    },
-    {
-      name: 'features',
-      type: 'group',
-      fields: [
         {
-          name: 'moodTracker',
-          type: 'checkbox',
+          label: {
+            en: 'Personalized AI notifications',
+            uk: 'Персоналізовані сповіщення від ШІ',
+          },
+          value: OnboardingStep.PersonalizedAINotificationsPermission,
         },
       ],
     },

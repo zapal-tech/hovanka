@@ -46,12 +46,13 @@
         <div class="flex items-center text-green-900">
           <LogoMark class="h-10 w-10 flex-none fill-green-500" />
           <div class="ml-4">
-            <p class="text-base font-semibold">{m.name()}</p>
+            <p class="font-serif text-base font-semibold lowercase">{m.name()}</p>
             <p class="mt-1 text-sm">{m.tagline()}.</p>
           </div>
         </div>
+
         <nav class="mt-11 flex gap-8">
-          <NavLinks footer={true} />
+          <NavLinks footer />
         </nav>
       </div>
       <!-- <div
@@ -92,11 +93,13 @@
           disabled={isLoading}
           class="w-60 min-w-0 shrink"
         />
+
         <Button type="submit" color="green" class="ml-4 flex-none" disabled={isLoading}>
           <span class="hidden lg:inline">{m.join_newsletter()}</span>
           <span class="lg:hidden">{m.join_newsletter()}</span>
         </Button>
       </form>
+
       <p class="mt-6 text-sm text-green-500 md:mt-0">
         {m.name()} — {m.tagline()}
       </p>

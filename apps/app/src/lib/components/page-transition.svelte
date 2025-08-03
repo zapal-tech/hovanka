@@ -6,7 +6,7 @@
 </script>
 
 {#key pathname}
-  <div in:fly={{ x: -200, duration, delay: duration }} out:fly={{ x: 200, duration }} class="p-4 sm:p-8">
+  <div in:fly={{ x: -200, duration, delay: duration }} out:fly={{ x: 200, duration }} class="h-full p-4 sm:p-8">
     {@render children()}
   </div>
 {/key}

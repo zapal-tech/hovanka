@@ -4,7 +4,7 @@
 @plugin '@headlessui/tailwindcss';
 
 html {
-  color: var(--color-green-900);
+  color: var(--color-green-950);
 }
 
 @theme {
@@ -22,6 +22,7 @@ html {
   --color-green-950: #072721;
 
   --font-sans: 'Open Sans', 'sans-serif';
+  --font-serif: 'Source Serif 4', 'serif';
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
@@ -33,7 +34,7 @@ html {
   --text-base--line-height: 1.5rem;
 
   --text-lg: 1.125rem;
-  --text-lg--line-height: 2rem;
+  --text-lg--line-height: 1.625rem;
 
   --text-xl: 1.25rem;
   --text-xl--line-height: 1.75rem;

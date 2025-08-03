@@ -27,16 +27,32 @@ export const CollectionLabel: Record<keyof typeof Collection, CollectionLabel> =
     },
   },
 
-  AppUsageGoals: {
+  OnboardingFormSubmissions: {
     plural: {
-      en: 'App usage goals',
-      uk: 'Цілі використання додатку',
+      en: 'Onboarding form submissions',
+      uk: 'Заповнені онбординг форми',
     },
     singular: {
-      en: 'App usage goal',
-      uk: 'Ціль використання додатку',
+      en: 'Onboarding form submission',
+      uk: 'Заповнена онбординг форма',
+    },
+  },
+
+  OnboardingStepValues: {
+    plural: {
+      en: 'Onboarding step values',
+      uk: 'Значення доступні до заповнення на онбордингу',
+    },
+    singular: {
+      en: 'Onboarding step value',
+      uk: 'Значення доступне до заповнення на онбордингу',
     },
   },
 } as const
 
-export const GlobalLabel: Record<keyof typeof Global, GlobalLabel> = {}
+export const GlobalLabel: Record<keyof typeof Global, GlobalLabel> = {
+  Onboarding: {
+    en: 'Onboarding',
+    uk: 'Онбординг',
+  },
+}

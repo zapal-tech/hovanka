@@ -39,8 +39,8 @@
 <section id="pricing" aria-labelledby="pricing-title" class="border-t border-green-200 bg-green-100 py-20 sm:py-32">
   <Container>
     <div class="mx-auto max-w-2xl text-center">
-      <h2 id="pricing-title" class="text-3xl font-medium tracking-tight text-green-900">{m.pricing_title()}</h2>
-      <p class="mt-2 text-lg text-green-600">
+      <h2 id="pricing-title" class="font-serif text-4xl font-semibold tracking-tight text-green-950">{m.pricing_title()}</h2>
+      <p class="mt-2 text-lg text-green-700">
         {m.pricing_subtitle()}
       </p>
     </div>

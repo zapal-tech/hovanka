@@ -7,9 +7,9 @@
 </svelte:head>
 
 <div class="my-24">
-  <h1 class="mb-8 text-3xl font-medium">Privacy Policy for Hovanka</h1>
+  <h1 class="mb-8 font-serif text-4xl font-semibold">Privacy Policy for Hovanka</h1>
 
-  <p class="mb-16 text-green-600">Effective Date: 20 January 2025</p>
+  <p class="mb-16 text-green-700">Effective Date: 20 January 2025</p>
 
   <p class="text-lg">
     At Hovanka, accessible from <a

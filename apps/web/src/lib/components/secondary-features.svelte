@@ -23,8 +23,8 @@
 <section id="features" aria-label="Features for building a portfolio" class="py-20 sm:py-32">
   <Container>
     <div class="mx-auto max-w-2xl sm:text-center">
-      <h2 class="text-3xl font-medium tracking-tight text-green-900">{m.secondary_features_title()}</h2>
-      <p class="mt-2 text-lg whitespace-pre-line text-green-600">
+      <h2 class="font-serif text-4xl font-semibold tracking-tight text-green-950">{m.secondary_features_title()}</h2>
+      <p class="mt-2 text-lg whitespace-pre-line text-green-700">
         {m.secondary_features_description()}
       </p>
     </div>

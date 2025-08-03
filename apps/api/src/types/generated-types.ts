@@ -12,7 +12,8 @@ export interface Config {
   }
   collections: {
     journals: Journal
-    appUsageGoals: AppUsageGoal
+    'onboarding-form-submissions': OnboardingFormSubmission
+    'onboarding-step-values': OnboardingStepValue
     users: User
     'payload-locked-documents': PayloadLockedDocument
     'payload-preferences': PayloadPreference
@@ -21,11 +22,13 @@ export interface Config {
   collectionsJoins: {
     users: {
       journalNotes: 'journals'
+      onboardingForm: 'onboarding-form-submissions'
     }
   }
   collectionsSelect: {
     journals: JournalsSelect<false> | JournalsSelect<true>
-    appUsageGoals: AppUsageGoalsSelect<false> | AppUsageGoalsSelect<true>
+    'onboarding-form-submissions': OnboardingFormSubmissionsSelect<false> | OnboardingFormSubmissionsSelect<true>
+    'onboarding-step-values': OnboardingStepValuesSelect<false> | OnboardingStepValuesSelect<true>
     users: UsersSelect<false> | UsersSelect<true>
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>
@@ -34,8 +37,12 @@ export interface Config {
   db: {
     defaultIDType: number
   }
-  globals: {}
-  globalsSelect: {}
+  globals: {
+    onboarding: Onboarding
+  }
+  globalsSelect: {
+    onboarding: OnboardingSelect<false> | OnboardingSelect<true>
+  }
   locale: 'uk' | 'en'
   user: User & {
     collection: 'users'
@@ -89,11 +96,12 @@ export interface User {
     docs?: (number | Journal)[] | null
     hasNextPage?: boolean | null
   } | null
+  onboardingForm?: {
+    docs?: (number | OnboardingFormSubmission)[] | null
+    hasNextPage?: boolean | null
+  } | null
   onboardingCompleted?: boolean | null
-  onboardingStep?: ('nameAndAge' | 'moodTrackerFeature' | 'appUsageGoals') | null
-  features?: {
-    moodTracker?: boolean | null
-  }
+  onboardingStep?: ('userGoals' | 'initialEmotionalState' | 'wantedFeatures' | 'personalizedAINotificationsPermission') | null
   sub?: string | null
   updatedAt: string
   createdAt: string
@@ -108,11 +116,26 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "appUsageGoals".
+ * via the `definition` "onboarding-form-submissions".
  */
-export interface AppUsageGoal {
+export interface OnboardingFormSubmission {
   id: number
-  title?: string | null
+  user: number | User
+  userGoals?: (number | OnboardingStepValue)[] | null
+  initialEmotionalState?: (number | OnboardingStepValue)[] | null
+  wantedFeatures?: (number | OnboardingStepValue)[] | null
+  personalizedAINotificationsPermission?: boolean | null
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "onboarding-step-values".
+ */
+export interface OnboardingStepValue {
+  id: number
+  step: 'userGoals' | 'initialEmotionalState' | 'wantedFeatures'
+  value: string
   updatedAt: string
   createdAt: string
 }
@@ -128,8 +151,12 @@ export interface PayloadLockedDocument {
         value: number | Journal
       } | null)
     | ({
-        relationTo: 'appUsageGoals'
-        value: number | AppUsageGoal
+        relationTo: 'onboarding-form-submissions'
+        value: number | OnboardingFormSubmission
+      } | null)
+    | ({
+        relationTo: 'onboarding-step-values'
+        value: number | OnboardingStepValue
       } | null)
     | ({
         relationTo: 'users'
@@ -192,10 +219,24 @@ export interface JournalsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "appUsageGoals_select".
+ * via the `definition` "onboarding-form-submissions_select".
  */
-export interface AppUsageGoalsSelect<T extends boolean = true> {
-  title?: T
+export interface OnboardingFormSubmissionsSelect<T extends boolean = true> {
+  user?: T
+  userGoals?: T
+  initialEmotionalState?: T
+  wantedFeatures?: T
+  personalizedAINotificationsPermission?: T
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "onboarding-step-values_select".
+ */
+export interface OnboardingStepValuesSelect<T extends boolean = true> {
+  step?: T
+  value?: T
   updatedAt?: T
   createdAt?: T
 }
@@ -207,13 +248,9 @@ export interface UsersSelect<T extends boolean = true> {
   firstName?: T
   roles?: T
   journalNotes?: T
+  onboardingForm?: T
   onboardingCompleted?: T
   onboardingStep?: T
-  features?:
-    | T
-    | {
-        moodTracker?: T
-      }
   sub?: T
   updatedAt?: T
   createdAt?: T
@@ -256,6 +293,60 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T
   updatedAt?: T
   createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "onboarding".
+ */
+export interface Onboarding {
+  id: number
+  steps: {
+    userGoals: {
+      type: 'multipleChoiceList' | 'multipleChoiceChips'
+      data?: (number | OnboardingStepValue)[] | null
+    }
+    initialEmotionalState: {
+      type: 'multipleChoiceList' | 'multipleChoiceChips'
+      data?: (number | OnboardingStepValue)[] | null
+    }
+    wantedFeatures: {
+      type: 'multipleChoiceList' | 'multipleChoiceChips'
+      data?: (number | OnboardingStepValue)[] | null
+    }
+  }
+  updatedAt?: string | null
+  createdAt?: string | null
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "onboarding_select".
+ */
+export interface OnboardingSelect<T extends boolean = true> {
+  steps?:
+    | T
+    | {
+        userGoals?:
+          | T
+          | {
+              type?: T
+              data?: T
+            }
+        initialEmotionalState?:
+          | T
+          | {
+              type?: T
+              data?: T
+            }
+        wantedFeatures?:
+          | T
+          | {
+              type?: T
+              data?: T
+            }
+      }
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

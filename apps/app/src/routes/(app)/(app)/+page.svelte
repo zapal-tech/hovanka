@@ -7,7 +7,7 @@
 </script>
 
 <div class="grid gap-4 sm:grid-cols-2">
-  <div class=" rounded-3xl bg-gradient-to-br from-green-400 via-emerald-200 to-green-100 p-8 shadow-xl">
+  <!-- <div class="rounded-3xl bg-gradient-to-br from-green-400 via-emerald-200 to-green-100 p-8 shadow-xl">
     <h1 class="text-3xl font-bold text-green-900 sm:text-4xl">
       {m.hi()}{data.user.firstName ? ', ' : ''}{data.user.firstName}!
     </h1>
@@ -18,5 +18,5 @@
     <p class="text-md text-green-800 sm:text-lg">{m.hope_you_are_doing_great()}</p>
   </div>
 
-  <div class="col-span-full h-56 rounded-3xl bg-gradient-to-br from-green-300 via-emerald-200 to-green-100 p-8 shadow-xl"></div>
+  <div class="col-span-full h-56 rounded-3xl bg-gradient-to-br from-green-300 via-emerald-200 to-green-100 p-8 shadow-xl"></div> -->
 </div>

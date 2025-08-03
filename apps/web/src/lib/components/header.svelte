@@ -29,7 +29,7 @@
     <Container class="relative z-50 mx-auto flex max-w-7xl justify-between px-4 py-8 sm:px-6 lg:px-8">
       <div class="relative z-10 flex items-center gap-16">
         <a href="/" aria-label="Home">
-          <Logo class="h-9 w-auto" />
+          <Logo class="-mt-2.5 h-7 w-auto" />
         </a>
 
         <div class="hidden lg:flex lg:gap-10">
@@ -70,7 +70,7 @@
               <LanguageSwitcher class="mt-8" />
               <div class="mt-8 flex flex-col gap-4">
                 <Button href={`https://${PUBLIC_APP_DOMAIN}/sign-in`} variant="outline">{m.sign_in()}</Button>
-                <Button href={`https://${PUBLIC_APP_DOMAIN}`}>{m.try_it_out()}</Button>
+                <Button href={`https://${PUBLIC_APP_DOMAIN}/sign-up`}>{m.try_it_out()}</Button>
               </div>
             </div>
           {/if}
@@ -78,10 +78,10 @@
 
         <LanguageSwitcher class="mr-4 hidden lg:flex" />
 
-        <Button href={`https://${PUBLIC_APP_DOMAIN}/sign-in`} target="_blank" variant="outline" class="hidden! lg:block!"
-          >{m.sign_in()}</Button
-        >
-        <Button href={`https://${PUBLIC_APP_DOMAIN}`} target="_blank" class="hidden! lg:block!">{m.try_it_out()}</Button>
+        <div class="hidden gap-4 lg:flex">
+          <Button href={`https://${PUBLIC_APP_DOMAIN}/sign-in`} target="_blank" variant="outline">{m.sign_in()}</Button>
+          <Button href={`https://${PUBLIC_APP_DOMAIN}/sign-up`} target="_blank">{m.try_it_out()}</Button>
+        </div>
       </div>
     </Container>
   </nav>

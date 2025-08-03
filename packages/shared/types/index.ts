@@ -1,10 +1,13 @@
 export enum Collection {
   Users = 'users',
   Journals = 'journals',
-  AppUsageGoals = 'appUsageGoals',
+  OnboardingFormSubmissions = 'onboarding-form-submissions',
+  OnboardingStepValues = 'onboarding-step-values',
 }
 
-export enum Global {}
+export enum Global {
+  Onboarding = 'onboarding',
+}
 
 export * from './admin'
 export * from './roles'

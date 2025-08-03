@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages'
 
-  let { footer } = $props()
+  let { footer }: { footer?: boolean } = $props()
 
   const links = [
     { label: m.nav_features(), href: '/#features' },

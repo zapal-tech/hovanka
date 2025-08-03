@@ -38,11 +38,11 @@
     featured ? 'order-first bg-green-900 lg:order-none' : 'bg-white',
   ]}
 >
-  <h3 class={['flex items-center text-sm font-semibold', featured ? 'text-white' : 'text-green-900']}>
+  <h3 class={['flex items-center text-sm', featured ? 'text-white' : 'text-green-950']}>
     <LogoMark class={['h-6 w-6 flex-none', logoMarkClass]} />
     <span class="ml-4">{name}</span>
   </h3>
-  <p class={['relative mt-5 flex gap-2 text-3xl tracking-tight', featured ? 'text-white' : 'text-green-900']}>
+  <p class={['relative mt-5 flex gap-2 text-3xl tracking-tight', featured ? 'text-white' : 'text-green-950']}>
     {#if price.monthly === price.annually}
       {price.monthly}
     {:else}
@@ -66,17 +66,17 @@
       </span>
     {/if}
   </p>
-  <p class={['mt-3 text-sm', featured ? 'text-green-300' : 'text-green-700']}>
+  <p class={['mt-3 text-sm', featured ? 'text-green-200' : 'text-green-700']}>
     {description}
   </p>
   <div class="order-last mt-6">
     <ul
       role="list"
-      class={['-my-2 divide-y text-sm', featured ? 'divide-green-800 text-green-300' : 'divide-green-200 text-green-700']}
+      class={['-my-2 divide-y text-sm', featured ? 'divide-green-700 text-green-200' : 'divide-green-200 text-green-700']}
     >
       {#each features as feature}
         <li class="flex py-2">
-          <CheckIcon class={['h-6 w-6 flex-none', featured ? 'text-white' : 'text-green-500']} />
+          <CheckIcon class={['h-6 w-6 flex-none', featured ? 'text-white' : 'text-green-800']} />
           <span class="ml-4">{feature}</span>
         </li>
       {/each}

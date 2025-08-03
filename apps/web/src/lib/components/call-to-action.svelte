@@ -14,7 +14,7 @@
   </div> -->
   <Container class="relative">
     <div class="mx-auto max-w-md sm:text-center">
-      <h2 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">{m.cta_title()}</h2>
+      <h2 class="font-serif text-4xl font-semibold tracking-tight text-white sm:text-4xl">{m.cta_title()}</h2>
       <p class="mt-4 text-lg text-green-300">{m.cta_description()}</p>
       <!-- <div class="mt-8 flex justify-center gap-x-6 gap-y-4">
         <PlayStoreLink color="white" />

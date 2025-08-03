@@ -20,8 +20,8 @@
 <section id="faqs" aria-labelledby="faqs-title" class="border-t border-green-200 py-20 sm:py-32">
   <Container>
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 id="faqs-title" class="text-3xl font-medium tracking-tight text-green-900">{m.faq_title()}</h2>
-      <p class="mt-2 text-lg text-green-600">
+      <h2 id="faqs-title" class="font-serif text-4xl font-semibold tracking-tight text-green-950">{m.faq_title()}</h2>
+      <p class="mt-2 text-lg text-green-700">
         <span>{m.faq_subtitle_prefix()}</span>
         <a href={`mailto:${m.email()}`} class="text-green-900 underline">{m.faq_subtitle_link()}</a><span
           >{m.faq_subtitle_suffix()}</span

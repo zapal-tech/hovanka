@@ -1,8 +1,8 @@
 import type { MeOperationResult, PaginatedDocs } from 'payload'
 
-import type { Collection } from '@hovanka/shared/types'
+import { Global, type Collection } from '@hovanka/shared/types'
 
-import type { Journal, User } from '@api-types'
+import type { Journal, Onboarding, OnboardingFormSubmission, User } from '@api-types'
 
 import { PUBLIC_API_URL } from '$env/static/public'
 
@@ -119,21 +119,22 @@ export const setPreference = async <T extends string>({
   return data
 }
 
-export const updateProfile = async ({ headers }: { headers: Headers }) => {
-  let data: (MeOperationResult & { user: User }) | null = null
+export const updateProfile = async ({ headers, id, data: content }: { headers: Headers; id: number; data: Partial<User> }) => {
+  let data: User | null = null
 
   try {
-    const response = await fetch(`${authCollectionApiUrl}/me`, {
-      method: 'POST',
+    const response = await fetch(`${authCollectionApiUrl}/${id}`, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         Cookie: headers.get('cookie') || '',
       },
+      body: JSON.stringify(content),
     })
 
     if (!response.ok) throw new Error('Failed to update profile')
 
-    data = (await response.json()) as MeOperationResult & { user: User }
+    data = (await response.json()) as User
   } catch (error) {
     console.error(error)
   }
@@ -216,6 +217,106 @@ export const createJournal = async ({ headers, content }: { headers?: Headers; c
     })
 
     if (!response.ok) throw new Error('Failed to create journal')
+
+    const responseData = await response.json()
+
+    if (!responseData?.doc && responseData?.message) console.error(responseData.message)
+    if (responseData?.doc) data = responseData.doc as Journal
+  } catch (error) {
+    console.error(error)
+  }
+
+  return data
+}
+
+export const getOnboardingData = async ({ headers }: { headers: Headers }) => {
+  let data: Onboarding | null = null
+
+  try {
+    const response = await fetch(`${apiUrl}/globals/${Global.Onboarding}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Cookie: headers.get('cookie') || '',
+      },
+    })
+
+    if (!response.ok) throw new Error('Failed to get onboarding data')
+
+    const responseData = await response.json()
+
+    if (responseData) data = responseData as Onboarding
+  } catch (error) {
+    console.error(error)
+  }
+
+  return data
+}
+
+export const createOnboardingForm = async ({
+  headers,
+  content,
+}: {
+  headers?: Headers
+  content: {
+    user: number
+  }
+}) => {
+  let data: OnboardingFormSubmission | null = null
+
+  try {
+    const response = await fetch(`${apiUrl}/onboarding-form-submissions`, {
+      method: 'POST',
+      credentials: headers ? undefined : 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        Cookie: headers?.get('cookie') || '',
+      },
+      body: JSON.stringify(content),
+    })
+
+    if (!response.ok) throw new Error('Failed to create onboarding form submission')
+
+    const responseData = await response.json()
+
+    if (!responseData?.doc && responseData?.message) console.error(responseData.message)
+    if (responseData?.doc) data = responseData.doc as Journal
+  } catch (error) {
+    console.error(error)
+  }
+
+  return data
+}
+
+export const updateOnboardingForm = async ({
+  headers,
+  id,
+  content,
+}: {
+  headers?: Headers
+  id: number
+  content: {
+    user: number
+    userGoals?: number[]
+    initialEmotionalState?: number[]
+    wantedFeatures?: number[]
+    personalizedAINotificationPermissions?: boolean
+  }
+}) => {
+  let data: OnboardingFormSubmission | null = null
+
+  try {
+    const response = await fetch(`${apiUrl}/onboarding-form-submissions/${id}`, {
+      method: 'PATCH',
+      credentials: headers ? undefined : 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        Cookie: headers?.get('cookie') || '',
+      },
+      body: JSON.stringify(content),
+    })
+
+    if (!response.ok) throw new Error('Failed to update onboarding form submission')
 
     const responseData = await response.json()
 

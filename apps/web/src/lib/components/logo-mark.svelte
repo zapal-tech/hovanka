@@ -1,5 +1,7 @@
 <script lang="ts">
-  const { width = 40, height = 40, ...props }: { width?: number; height?: number; class?: string } = $props()
+  import type { ClassValue } from 'svelte/elements'
+
+  const { width = 40, height = 40, ...props }: { width?: number; height?: number; class?: ClassValue } = $props()
 </script>
 
 <svg {...props} {width} {height} viewBox="0 0 28.575 28.575" aria-hidden={true}>

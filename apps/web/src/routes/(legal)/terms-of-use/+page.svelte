@@ -7,11 +7,12 @@
 </svelte:head>
 
 <div class="my-24">
-  <h1 class="mb-8 text-3xl font-medium">Terms of Use for Hovanka</h1>
+  <h1 class="mb-8 font-serif text-4xl font-semibold">Terms of Use for Hovanka</h1>
 
-  <p class="mb-16 text-green-600">Effective Date: 20 January 2025</p>
+  <p class="mb-16 text-green-700">Effective Date: 20 January 2025</p>
 
   <p class="text-lg">Welcome to Hovanka.</p>
+  <br />
   <p class="text-lg">
     By accessing or using our website located at <a
       class="text-green-500 underline underline-offset-2"

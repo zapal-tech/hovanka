@@ -14,6 +14,7 @@ export const checkUserRoles = (allRoles: User['roles'] = [], user?: User | AuthU
 
 export const anyone: Access = () => true
 
+export const allUsers: Access = ({ req: { user } }) => !!user
 export const rootUsers: Access = ({ req: { user } }) => isRootUser(user)
 export const rootUsersAdminAccess = ({ req: { user } }: { req: PayloadRequest }): boolean => isRootUser(user)
 
