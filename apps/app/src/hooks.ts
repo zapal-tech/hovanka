@@ -3,7 +3,4 @@ import type { Reroute } from '@sveltejs/kit'
 
 import * as runtime from '$lib/paraglide/runtime'
 
-// import { i18n } from '$lib/i18n'
-
-// Bypass i18n for /api routes
-export const reroute: Reroute = createI18n(runtime, { prefixDefaultLanguage: 'always' }).reroute()
+export const reroute: Reroute = createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: ['/sw.js'] }).reroute()

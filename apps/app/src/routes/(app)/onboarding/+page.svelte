@@ -4,7 +4,7 @@
   import * as m from '$lib/paraglide/messages'
 </script>
 
-<div class="flex h-full">
+<div class="flex h-full justify-center">
   <div class="absolute top-1/2 -translate-y-1/2">
     <h1 class="text-center font-serif text-3xl font-semibold text-green-950">{m.onboarding_welcome_title()}</h1>
     <p class="text-center text-lg text-green-800">{m.onboarding_welcome_subtitle()}</p>

@@ -7,8 +7,6 @@ import { tokenCookieName } from '@hovanka/shared/cookies'
 import * as runtime from '$lib/paraglide/runtime'
 import { getCurrentUser } from '$lib/server/auth'
 
-// import { i18n } from '$lib/i18n'
-
 // const preloadFonts: Handle = ({ event, resolve }) =>
 //   resolve(event, {
 //     preload: ({ type }) => type === 'font' || type === 'js' || type === 'css',
