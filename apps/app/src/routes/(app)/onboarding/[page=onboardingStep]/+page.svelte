@@ -57,7 +57,7 @@
 {/snippet}
 
 {#snippet multipleChoiceChips(options: { id: number; value: string }[])}
-  <ul class="col-span-full mb-8 flex flex-wrap justify-center gap-2">
+  <ul class="col-span-full mb-8 flex h-fit flex-wrap justify-center gap-2">
     {#each options as option, index}
       <li id={`${data.onboardingStep}-option-${index}`}>
         <label
