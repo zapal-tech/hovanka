@@ -16,7 +16,9 @@
           'uppercase transition-colors lg:rounded-lg lg:px-[calc(--spacing(3)-1px)] lg:py-[calc(--spacing(2)-1px)] lg:hover:bg-green-100',
           lang === runtime.languageTag() ? 'text-green-900 hover:text-green-700' : 'text-green-400 hover:text-green-700',
         ]}
-        href={createI18n(runtime, { prefixDefaultLanguage: 'always' }).route($page.url.pathname)}
+        href={createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/, '/sw.js'] }).route(
+          $page.url.pathname,
+        )}
         hreflang={lang}
         aria-current={lang === runtime.languageTag() ? 'page' : undefined}
         aria-label={`Change language to "${lang}" button`}

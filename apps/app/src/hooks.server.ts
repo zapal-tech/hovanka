@@ -12,7 +12,10 @@ import { getCurrentUser } from '$lib/server/auth'
 //     preload: ({ type }) => type === 'font' || type === 'js' || type === 'css',
 //   })
 
-const i18nHandle: Handle = createI18n(runtime, { prefixDefaultLanguage: 'always' }).handle({
+const i18nHandle: Handle = createI18n(runtime, {
+  prefixDefaultLanguage: 'always',
+  exclude: [/^\/api\/.*/, /\.pdf$/, '/sw.js'],
+}).handle({
   langPlaceholder: '%i18n.lang%',
   textDirectionPlaceholder: '%i18n.dir%',
 })

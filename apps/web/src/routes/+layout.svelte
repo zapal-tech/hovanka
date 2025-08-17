@@ -37,6 +37,6 @@
   {/each}
 </svelte:head>
 
-<ParaglideJS i18n={createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/] })}>
+<ParaglideJS i18n={createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/, '/sw.js'] })}>
   {@render children()}
 </ParaglideJS>

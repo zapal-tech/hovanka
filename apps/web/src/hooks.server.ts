@@ -14,7 +14,7 @@ import * as runtime from '$lib/paraglide/runtime'
 const i18nHandle: Handle = (data) => {
   // if (data.event.url.pathname.startsWith('/api') || data.event.url.pathname.endsWith('.pdf')) return data.resolve(data.event)
 
-  return createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/] }).handle({
+  return createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/, '/sw.js'] }).handle({
     langPlaceholder: '%i18n.lang%',
     textDirectionPlaceholder: '%i18n.dir%',
   })(data)

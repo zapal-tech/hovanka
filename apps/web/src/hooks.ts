@@ -9,5 +9,5 @@ import * as runtime from '$lib/paraglide/runtime'
 export const reroute: Reroute = (event) => {
   // if (event.url.pathname.startsWith('/api') || event.url.pathname.endsWith('.pdf')) return
 
-  return createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/] }).reroute()(event)
+  return createI18n(runtime, { prefixDefaultLanguage: 'always', exclude: [/^\/api\/.*/, /\.pdf$/, '/sw.js'] }).reroute()(event)
 }
