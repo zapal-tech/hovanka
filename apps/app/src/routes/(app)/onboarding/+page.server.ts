@@ -21,13 +21,15 @@ export const actions = {
   },
 } satisfies Actions
 
-export const load = async ({ locals, url }) => {
+export const load = async ({ locals, request, url }) => {
   const { user } = locals
 
   if (user && user.onboardingStep && (onboardingSteps as unknown as unknown[]).includes(user.onboardingStep))
     redirect(307, `/onboarding/${onboardingStepToSlugsMap[user.onboardingStep]}`)
 
   const isSignUpFlow = url.searchParams.get('sign_up_flow') === 'true'
+
+  if (isSignUpFlow) await updateProfile({ headers: request.headers, id: user!.id, data: { signUpFlowCompleted: true } })
 
   return { isSignUpFlow }
 }
