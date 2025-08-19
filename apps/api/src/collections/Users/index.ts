@@ -99,6 +99,9 @@ export const Users: CollectionConfig = {
         uk: 'Реєстрацію пройдено',
       },
       type: 'checkbox',
+      admin: {
+        position: 'sidebar',
+      },
     },
     {
       name: 'onboardingCompleted',

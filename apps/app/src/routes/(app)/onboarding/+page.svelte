@@ -6,7 +6,8 @@
 
   const { data } = $props()
 
-  if (browser && data.isSignUpFlow && typeof (window as any)?.fbq === 'function') (window as any).fbq?.('track', 'Lead')
+  if (browser && data.isSignUpFlow && typeof (window as any)?.fbq === 'function')
+    (window as any).fbq?.('track', 'CompleteRegistration')
 </script>
 
 <div class="flex h-full justify-center">

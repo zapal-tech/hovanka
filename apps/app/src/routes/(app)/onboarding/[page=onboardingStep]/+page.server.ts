@@ -12,6 +12,7 @@ import type { Actions } from './$types'
 export const load = async ({ request: { headers }, params: { page }, locals: { user } }) => {
   const onboardingData = await getOnboardingData({ headers })
 
+  if (!user?.onboardingStep) redirect(307, '/onboarding')
   if (user?.onboardingStep && onboardingStepToSlugsMap[user.onboardingStep] !== page)
     redirect(307, `/onboarding/${onboardingStepToSlugsMap[user.onboardingStep]}`)
 
