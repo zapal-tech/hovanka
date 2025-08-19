@@ -14,6 +14,9 @@ declare global {
       paraglide: ParaglideLocals<AvailableLanguageTag>
       user: Me['user']
     }
+    interface Window {
+      fbq?: (event: string, data?: Record<string, unknown>) => void
+    }
     // interface PageData {}
     // interface PageState {}
     // interface Platform {}

@@ -1,7 +1,12 @@
 <script lang="ts">
+  import { browser } from '$app/environment'
   import { enhance } from '$app/forms'
   import Button from '$lib/components/button.svelte'
   import * as m from '$lib/paraglide/messages'
+
+  const { data } = $props()
+
+  if (browser && data.isSignUpFlow && typeof (window as any)?.fbq === 'function') (window as any).fbq?.('track', 'Lead')
 </script>
 
 <div class="flex h-full justify-center">

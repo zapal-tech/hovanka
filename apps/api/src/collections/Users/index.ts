@@ -86,30 +86,41 @@ export const Users: CollectionConfig = {
       type: 'join',
       name: 'journalNotes',
       label: {
-        en: 'Journal Notes',
+        en: 'Journal notes',
         uk: 'Нотатки з щоденника',
       },
       collection: Collection.Journals,
       on: 'user',
     },
     {
-      type: 'join',
-      name: 'onboardingForm',
+      name: 'signUpFlowCompleted',
       label: {
-        en: 'Onboarding Form',
-        uk: 'Onboarding форма',
+        en: 'Sign Up flow completed',
+        uk: 'Реєстрацію пройдено',
       },
-      collection: Collection.OnboardingFormSubmissions,
-      on: 'user',
-      defaultLimit: 1,
-    },
-    {
-      name: 'onboardingCompleted',
       type: 'checkbox',
     },
     {
+      name: 'onboardingCompleted',
+      label: {
+        en: 'Onboarding completed',
+        uk: 'Оnбординг завершено',
+      },
+      type: 'checkbox',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'onboardingStep',
+      label: {
+        en: 'Onboarding step',
+        uk: 'Крок онбордингу',
+      },
       type: 'select',
+      admin: {
+        position: 'sidebar',
+      },
       options: [
         {
           label: {
@@ -140,6 +151,20 @@ export const Users: CollectionConfig = {
           value: OnboardingStep.PersonalizedAINotificationsPermission,
         },
       ],
+    },
+    {
+      type: 'join',
+      name: 'onboardingForm',
+      label: {
+        en: 'Onboarding Form',
+        uk: 'Onboarding форма',
+      },
+      collection: Collection.OnboardingFormSubmissions,
+      on: 'user',
+      defaultLimit: 1,
+      admin: {
+        position: 'sidebar',
+      },
     },
   ],
 }

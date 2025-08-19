@@ -157,7 +157,7 @@ const payloadConfig: Config = {
               : undefined,
         }
       },
-      successRedirect: () => process.env.NEXT_PUBLIC_APP_URL || '',
+      successRedirect: (req) => process.env.NEXT_PUBLIC_APP_URL || '',
       failureRedirect: (req, err) => {
         req.payload.logger.error(err)
 

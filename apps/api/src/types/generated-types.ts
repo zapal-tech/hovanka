@@ -96,12 +96,13 @@ export interface User {
     docs?: (number | Journal)[] | null
     hasNextPage?: boolean | null
   } | null
+  signUpFlowCompleted?: boolean | null
+  onboardingCompleted?: boolean | null
+  onboardingStep?: ('userGoals' | 'initialEmotionalState' | 'wantedFeatures' | 'personalizedAINotificationsPermission') | null
   onboardingForm?: {
     docs?: (number | OnboardingFormSubmission)[] | null
     hasNextPage?: boolean | null
   } | null
-  onboardingCompleted?: boolean | null
-  onboardingStep?: ('userGoals' | 'initialEmotionalState' | 'wantedFeatures' | 'personalizedAINotificationsPermission') | null
   sub?: string | null
   updatedAt: string
   createdAt: string
@@ -248,9 +249,10 @@ export interface UsersSelect<T extends boolean = true> {
   firstName?: T
   roles?: T
   journalNotes?: T
-  onboardingForm?: T
+  signUpFlowCompleted?: T
   onboardingCompleted?: T
   onboardingStep?: T
+  onboardingForm?: T
   sub?: T
   updatedAt?: T
   createdAt?: T
