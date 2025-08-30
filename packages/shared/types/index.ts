@@ -3,6 +3,10 @@ export enum Collection {
   Journals = 'journals',
   OnboardingFormSubmissions = 'onboarding-form-submissions',
   OnboardingStepValues = 'onboarding-step-values',
+  Emotions = 'emotions',
+  Articles = 'articles',
+  Tags = 'tags',
+  Practices = 'practices',
 }
 
 export enum Global {

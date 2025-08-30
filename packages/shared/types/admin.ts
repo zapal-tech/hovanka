@@ -48,6 +48,50 @@ export const CollectionLabel: Record<keyof typeof Collection, CollectionLabel> =
       uk: 'Значення доступне до заповнення на онбордингу',
     },
   },
+
+  Emotions: {
+    plural: {
+      en: 'Emotions',
+      uk: 'Емоції',
+    },
+    singular: {
+      en: 'Emotion',
+      uk: 'Емоція',
+    },
+  },
+
+  Articles: {
+    plural: {
+      en: 'Articles',
+      uk: 'Статті',
+    },
+    singular: {
+      en: 'Article',
+      uk: 'Стаття',
+    },
+  },
+
+  Tags: {
+    plural: {
+      en: 'Tags',
+      uk: 'Теги',
+    },
+    singular: {
+      en: 'Tag',
+      uk: 'Тег',
+    },
+  },
+
+  Practices: {
+    plural: {
+      en: 'Practices',
+      uk: 'Практики',
+    },
+    singular: {
+      en: 'Practice',
+      uk: 'Практика',
+    },
+  },
 } as const
 
 export const GlobalLabel: Record<keyof typeof Global, GlobalLabel> = {

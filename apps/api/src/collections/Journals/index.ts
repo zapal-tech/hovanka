@@ -43,16 +43,5 @@ export const Journals: CollectionConfig = {
         { label: 'Mood tracker', value: 'mood-tracker' },
       ],
     },
-    {
-      type: 'select',
-      name: 'mood',
-      options: [
-        { label: 'Happy', value: 'happy' },
-        { label: 'Sad', value: 'sad' },
-        { label: 'Angry', value: 'angry' },
-        { label: 'Anxious', value: 'anxious' },
-        { label: 'Neutral', value: 'neutral' },
-      ],
-    },
   ],
 }

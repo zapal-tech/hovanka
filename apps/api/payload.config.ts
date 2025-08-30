@@ -17,9 +17,12 @@ import { cmsSenderEmail, cmsSenderName } from '@hovanka/shared/email'
 import { defaultLocale, Locale } from '@hovanka/shared/i18n'
 import { Collection, UserRole } from '@hovanka/shared/types'
 
+import { Articles } from '@api/collections/Articles'
 import { Journals } from '@api/collections/Journals'
 import { OnboardingFormSubmissions } from '@api/collections/OnboardingFormSubmissions'
 import { OnboardingStepValues } from '@api/collections/OnboardingStepValues'
+import { Practices } from '@api/collections/Practices'
+import { Tags } from '@api/collections/Tags'
 import { Users } from '@api/collections/Users'
 import { getDefaultEditor } from '@api/editor'
 import { Onboarding } from '@api/globals/Onboarding'
@@ -100,7 +103,7 @@ const payloadConfig: Config = {
         }
       : false,
   },
-  collections: [Users, Journals, OnboardingFormSubmissions, OnboardingStepValues],
+  collections: [Users, Journals, OnboardingFormSubmissions, OnboardingStepValues, Tags, Articles, Practices],
   globals: [Onboarding],
   cookiePrefix: cookiesName,
   cors: [process.env.NEXT_PUBLIC_URL, process.env.NEXT_PUBLIC_APP_URL].filter(Boolean) as string[],

@@ -14,6 +14,9 @@ export interface Config {
     journals: Journal
     'onboarding-form-submissions': OnboardingFormSubmission
     'onboarding-step-values': OnboardingStepValue
+    tags: Tag
+    articles: Article
+    practices: Practice
     users: User
     'payload-locked-documents': PayloadLockedDocument
     'payload-preferences': PayloadPreference
@@ -29,6 +32,9 @@ export interface Config {
     journals: JournalsSelect<false> | JournalsSelect<true>
     'onboarding-form-submissions': OnboardingFormSubmissionsSelect<false> | OnboardingFormSubmissionsSelect<true>
     'onboarding-step-values': OnboardingStepValuesSelect<false> | OnboardingStepValuesSelect<true>
+    tags: TagsSelect<false> | TagsSelect<true>
+    articles: ArticlesSelect<false> | ArticlesSelect<true>
+    practices: PracticesSelect<false> | PracticesSelect<true>
     users: UsersSelect<false> | UsersSelect<true>
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>
@@ -80,7 +86,6 @@ export interface Journal {
   content?: string | null
   user: number | User
   type?: ('journal' | 'mood-tracker') | null
-  mood?: ('happy' | 'sad' | 'angry' | 'anxious' | 'neutral') | null
   updatedAt: string
   createdAt: string
 }
@@ -142,6 +147,86 @@ export interface OnboardingStepValue {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: number
+  tag: string
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "articles".
+ */
+export interface Article {
+  id: number
+  title: string
+  content: {
+    root: {
+      type: string
+      children: {
+        type: string
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ('ltr' | 'rtl') | null
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  }
+  tags?: (number | Tag)[] | null
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "practices".
+ */
+export interface Practice {
+  id: number
+  title: string
+  description?: string | null
+  steps?:
+    | {
+        blocks?:
+          | {
+              type: 'text' | 'textarea' | 'media' | 'checkbox' | 'radio'
+              text?: {
+                content: string
+                size: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'base' | 'small'
+              }
+              textarea?: {
+                content: string
+              }
+              media?: {}
+              checkbox?: {
+                text: string
+                size: 'base' | 'small'
+              }
+              radio?: {
+                title?: string | null
+                sizeText: 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'base' | 'small'
+                options?:
+                  | {
+                      label: string
+                      id?: string | null
+                    }[]
+                  | null
+              }
+              id?: string | null
+            }[]
+          | null
+        id?: string | null
+      }[]
+    | null
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -158,6 +243,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'onboarding-step-values'
         value: number | OnboardingStepValue
+      } | null)
+    | ({
+        relationTo: 'tags'
+        value: number | Tag
+      } | null)
+    | ({
+        relationTo: 'articles'
+        value: number | Article
+      } | null)
+    | ({
+        relationTo: 'practices'
+        value: number | Practice
       } | null)
     | ({
         relationTo: 'users'
@@ -214,7 +311,6 @@ export interface JournalsSelect<T extends boolean = true> {
   content?: T
   user?: T
   type?: T
-  mood?: T
   updatedAt?: T
   createdAt?: T
 }
@@ -238,6 +334,77 @@ export interface OnboardingFormSubmissionsSelect<T extends boolean = true> {
 export interface OnboardingStepValuesSelect<T extends boolean = true> {
   step?: T
   value?: T
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  tag?: T
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "articles_select".
+ */
+export interface ArticlesSelect<T extends boolean = true> {
+  title?: T
+  content?: T
+  tags?: T
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "practices_select".
+ */
+export interface PracticesSelect<T extends boolean = true> {
+  title?: T
+  description?: T
+  steps?:
+    | T
+    | {
+        blocks?:
+          | T
+          | {
+              type?: T
+              text?:
+                | T
+                | {
+                    content?: T
+                    size?: T
+                  }
+              textarea?:
+                | T
+                | {
+                    content?: T
+                  }
+              media?: T | {}
+              checkbox?:
+                | T
+                | {
+                    text?: T
+                    size?: T
+                  }
+              radio?:
+                | T
+                | {
+                    title?: T
+                    sizeText?: T
+                    options?:
+                      | T
+                      | {
+                          label?: T
+                          id?: T
+                        }
+                  }
+              id?: T
+            }
+        id?: T
+      }
   updatedAt?: T
   createdAt?: T
 }
