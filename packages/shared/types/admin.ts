@@ -92,6 +92,17 @@ export const CollectionLabel: Record<keyof typeof Collection, CollectionLabel> =
       uk: 'Практика',
     },
   },
+
+  EmotionsStatistics: {
+    plural: {
+      en: 'Emotions statistics',
+      uk: 'Статистика емоцій',
+    },
+    singular: {
+      en: 'Emotions statistic',
+      uk: 'Статистика емоції',
+    },
+  },
 } as const
 
 export const GlobalLabel: Record<keyof typeof Global, GlobalLabel> = {

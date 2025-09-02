@@ -18,6 +18,8 @@ import { defaultLocale, Locale } from '@hovanka/shared/i18n'
 import { Collection, UserRole } from '@hovanka/shared/types'
 
 import { Articles } from '@api/collections/Articles'
+import { Emotions } from '@api/collections/Emotions'
+import { EmotionsStatistics } from '@api/collections/EmotionsStatistics'
 import { Journals } from '@api/collections/Journals'
 import { OnboardingFormSubmissions } from '@api/collections/OnboardingFormSubmissions'
 import { OnboardingStepValues } from '@api/collections/OnboardingStepValues'
@@ -27,6 +29,7 @@ import { Users } from '@api/collections/Users'
 import { getDefaultEditor } from '@api/editor'
 import { Onboarding } from '@api/globals/Onboarding'
 import { cmsLocales } from '@api/i18n'
+import { jobsConfig } from '@api/jobs'
 import { isDev } from '@api/utils/env'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -103,7 +106,17 @@ const payloadConfig: Config = {
         }
       : false,
   },
-  collections: [Users, Journals, OnboardingFormSubmissions, OnboardingStepValues, Tags, Articles, Practices],
+  collections: [
+    Users,
+    Journals,
+    OnboardingFormSubmissions,
+    OnboardingStepValues,
+    Tags,
+    Articles,
+    Practices,
+    Emotions,
+    EmotionsStatistics,
+  ],
   globals: [Onboarding],
   cookiePrefix: cookiesName,
   cors: [process.env.NEXT_PUBLIC_URL, process.env.NEXT_PUBLIC_APP_URL].filter(Boolean) as string[],
@@ -119,6 +132,7 @@ const payloadConfig: Config = {
     fallback: false,
     locales: cmsLocales,
   },
+  jobs: jobsConfig,
   plugins: [
     OAuth2Plugin({
       enabled: typeof process.env.GOOGLE_CLIENT_ID === 'string' && typeof process.env.GOOGLE_CLIENT_SECRET === 'string',
@@ -220,6 +234,26 @@ const payloadConfig: Config = {
           },
         })
       }
+    }
+
+    const existingEmotionStatisticMonthlyJob = await payload.find({
+      collection: 'payload-jobs',
+      where: {
+        taskSlug: { equals: 'emotion-statistics' },
+        queue: { equals: 'every-month' },
+      },
+      limit: 1,
+    })
+
+    if (existingEmotionStatisticMonthlyJob?.docs?.length === 0) {
+      payload.logger.info('Setting up monthly cron job for emotions statistics')
+      await payload.jobs.queue({
+        task: 'emotion-statistics',
+        queue: 'every-month',
+        input: {},
+      })
+
+      payload.logger.info('Monthly cron job for emotions statistics set up successfully')
     }
   },
   telemetry: false,

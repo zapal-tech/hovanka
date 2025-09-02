@@ -8,4 +8,10 @@ export enum EmotionsValues {
   Hateful = 'hateful',
   Hopeful = 'hopeful',
   Sleepy = 'sleepy',
+  Excited = 'excited',
+  Calm = 'calm',
+  Frustrated = 'frustrated',
+  Lonely = 'lonely',
+  Grateful = 'grateful',
+  Confused = 'confused',
 }

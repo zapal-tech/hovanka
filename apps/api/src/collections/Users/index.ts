@@ -169,5 +169,16 @@ export const Users: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    {
+      type: 'join',
+      name: 'emotionsStatistics',
+      label: {
+        en: 'Emotions statistics',
+        uk: 'Статистика емоцій',
+      },
+      collection: Collection.EmotionsStatistics,
+      on: 'user',
+      defaultLimit: 1,
+    },
   ],
 }

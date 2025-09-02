@@ -17,7 +17,10 @@ export interface Config {
     tags: Tag
     articles: Article
     practices: Practice
+    emotions: Emotion
+    'emotions-statistics': EmotionsStatistic
     users: User
+    'payload-jobs': PayloadJob
     'payload-locked-documents': PayloadLockedDocument
     'payload-preferences': PayloadPreference
     'payload-migrations': PayloadMigration
@@ -26,6 +29,7 @@ export interface Config {
     users: {
       journalNotes: 'journals'
       onboardingForm: 'onboarding-form-submissions'
+      emotionsStatistics: 'emotions-statistics'
     }
   }
   collectionsSelect: {
@@ -35,7 +39,10 @@ export interface Config {
     tags: TagsSelect<false> | TagsSelect<true>
     articles: ArticlesSelect<false> | ArticlesSelect<true>
     practices: PracticesSelect<false> | PracticesSelect<true>
+    emotions: EmotionsSelect<false> | EmotionsSelect<true>
+    'emotions-statistics': EmotionsStatisticsSelect<false> | EmotionsStatisticsSelect<true>
     users: UsersSelect<false> | UsersSelect<true>
+    'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>
@@ -54,7 +61,13 @@ export interface Config {
     collection: 'users'
   }
   jobs: {
-    tasks: unknown
+    tasks: {
+      'emotion-statistics': TaskEmotionStatistics
+      inline: {
+        input: unknown
+        output: unknown
+      }
+    }
     workflows: unknown
   }
 }
@@ -86,6 +99,7 @@ export interface Journal {
   content?: string | null
   user: number | User
   type?: ('journal' | 'mood-tracker') | null
+  emotions?: (number | null) | Emotion
   updatedAt: string
   createdAt: string
 }
@@ -106,6 +120,10 @@ export interface User {
   onboardingStep?: ('userGoals' | 'initialEmotionalState' | 'wantedFeatures' | 'personalizedAINotificationsPermission') | null
   onboardingForm?: {
     docs?: (number | OnboardingFormSubmission)[] | null
+    hasNextPage?: boolean | null
+  } | null
+  emotionsStatistics?: {
+    docs?: (number | EmotionsStatistic)[] | null
     hasNextPage?: boolean | null
   } | null
   sub?: string | null
@@ -142,6 +160,64 @@ export interface OnboardingStepValue {
   id: number
   step: 'userGoals' | 'initialEmotionalState' | 'wantedFeatures'
   value: string
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emotions-statistics".
+ */
+export interface EmotionsStatistic {
+  id: number
+  user: number | User
+  statistics?:
+    | {
+        emotion:
+          | 'happy'
+          | 'sad'
+          | 'angry'
+          | 'mad'
+          | 'scared'
+          | 'peaceful'
+          | 'hateful'
+          | 'hopeful'
+          | 'sleepy'
+          | 'excited'
+          | 'calm'
+          | 'frustrated'
+          | 'lonely'
+          | 'grateful'
+          | 'confused'
+        count: number
+        id?: string | null
+      }[]
+    | null
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emotions".
+ */
+export interface Emotion {
+  id: number
+  emotion:
+    | 'happy'
+    | 'sad'
+    | 'angry'
+    | 'mad'
+    | 'scared'
+    | 'peaceful'
+    | 'hateful'
+    | 'hopeful'
+    | 'sleepy'
+    | 'excited'
+    | 'calm'
+    | 'frustrated'
+    | 'lonely'
+    | 'grateful'
+    | 'confused'
+  parent?: (number | null) | Emotion
   updatedAt: string
   createdAt: string
 }
@@ -227,6 +303,98 @@ export interface Practice {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-jobs".
+ */
+export interface PayloadJob {
+  id: number
+  /**
+   * Input data provided to the job
+   */
+  input?:
+    | {
+        [k: string]: unknown
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null
+  taskStatus?:
+    | {
+        [k: string]: unknown
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null
+  completedAt?: string | null
+  totalTried?: number | null
+  /**
+   * If hasError is true this job will not be retried
+   */
+  hasError?: boolean | null
+  /**
+   * If hasError is true, this is the error that caused it
+   */
+  error?:
+    | {
+        [k: string]: unknown
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null
+  /**
+   * Task execution log
+   */
+  log?:
+    | {
+        executedAt: string
+        completedAt: string
+        taskSlug: 'inline' | 'emotion-statistics'
+        taskID: string
+        input?:
+          | {
+              [k: string]: unknown
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null
+        output?:
+          | {
+              [k: string]: unknown
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null
+        state: 'failed' | 'succeeded'
+        error?:
+          | {
+              [k: string]: unknown
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null
+        id?: string | null
+      }[]
+    | null
+  taskSlug?: ('inline' | 'emotion-statistics') | null
+  queue?: string | null
+  waitUntil?: string | null
+  processing?: boolean | null
+  updatedAt: string
+  createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -257,8 +425,20 @@ export interface PayloadLockedDocument {
         value: number | Practice
       } | null)
     | ({
+        relationTo: 'emotions'
+        value: number | Emotion
+      } | null)
+    | ({
+        relationTo: 'emotions-statistics'
+        value: number | EmotionsStatistic
+      } | null)
+    | ({
         relationTo: 'users'
         value: number | User
+      } | null)
+    | ({
+        relationTo: 'payload-jobs'
+        value: number | PayloadJob
       } | null)
   globalSlug?: string | null
   user: {
@@ -311,6 +491,7 @@ export interface JournalsSelect<T extends boolean = true> {
   content?: T
   user?: T
   type?: T
+  emotions?: T
   updatedAt?: T
   createdAt?: T
 }
@@ -410,6 +591,32 @@ export interface PracticesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emotions_select".
+ */
+export interface EmotionsSelect<T extends boolean = true> {
+  emotion?: T
+  parent?: T
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emotions-statistics_select".
+ */
+export interface EmotionsStatisticsSelect<T extends boolean = true> {
+  user?: T
+  statistics?:
+    | T
+    | {
+        emotion?: T
+        count?: T
+        id?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
@@ -420,6 +627,7 @@ export interface UsersSelect<T extends boolean = true> {
   onboardingCompleted?: T
   onboardingStep?: T
   onboardingForm?: T
+  emotionsStatistics?: T
   sub?: T
   updatedAt?: T
   createdAt?: T
@@ -430,6 +638,37 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T
   loginAttempts?: T
   lockUntil?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-jobs_select".
+ */
+export interface PayloadJobsSelect<T extends boolean = true> {
+  input?: T
+  taskStatus?: T
+  completedAt?: T
+  totalTried?: T
+  hasError?: T
+  error?: T
+  log?:
+    | T
+    | {
+        executedAt?: T
+        completedAt?: T
+        taskSlug?: T
+        taskID?: T
+        input?: T
+        output?: T
+        state?: T
+        error?: T
+        id?: T
+      }
+  taskSlug?: T
+  queue?: T
+  waitUntil?: T
+  processing?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -516,6 +755,14 @@ export interface OnboardingSelect<T extends boolean = true> {
   updatedAt?: T
   createdAt?: T
   globalType?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskEmotion-statistics".
+ */
+export interface TaskEmotionStatistics {
+  input?: unknown
+  output?: unknown
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -43,5 +43,14 @@ export const Journals: CollectionConfig = {
         { label: 'Mood tracker', value: 'mood-tracker' },
       ],
     },
+    {
+      type: 'relationship',
+      name: 'emotions',
+      relationTo: Collection.Emotions,
+      label: {
+        en: 'Emotions',
+        uk: 'Емоції',
+      },
+    },
   ],
 }

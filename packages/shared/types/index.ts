@@ -7,6 +7,7 @@ export enum Collection {
   Articles = 'articles',
   Tags = 'tags',
   Practices = 'practices',
+  EmotionsStatistics = 'emotions-statistics',
 }
 
 export enum Global {
