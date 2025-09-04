@@ -54,11 +54,16 @@
       </div>
       <div class="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
         <BackgroundIllustration
-          class="mask-image absolute top-4 left-1/2 h-[1026px] w-[1026px] -translate-x-1/3 stroke-green-300/70 sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0"
+          class="mask-image absolute top-4 left-1/2 z-0 h-[1026px] w-[1026px] -translate-x-1/3 stroke-green-300/70 sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0"
         />
         <div
           class="mask-image -mx-4 h-[448px] px-9 sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32"
         >
+          <img
+            src="/hovanka-hero.webp"
+            alt="Illustration with text: let's fuel evidence-based mental wellness together. hovanka"
+            class="relative z-10 mx-auto h-auto w-full max-w-96 bg-radial from-green-50 from-60% to-transparent to-90%"
+          />
           <!-- <PhoneFrame class="mx-auto max-w-[366px]" priority>
             <AppDemo />
           </PhoneFrame> -->
