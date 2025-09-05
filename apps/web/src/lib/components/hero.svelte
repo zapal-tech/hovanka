@@ -35,8 +35,8 @@
 <div class="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
   <Container>
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
-      <div class="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-        <h1 class="font-serif text-4xl font-semibold tracking-tight text-green-950">{m.tagline()}.</h1>
+      <div class="relative z-10 mx-auto w-full max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
+        <h1 class="font-serif text-4xl font-semibold tracking-tight whitespace-pre-line text-green-950">{m.tagline()}.</h1>
         <p class="mt-6 text-lg whitespace-pre-line text-green-700">{m.description()}</p>
         <div class="mt-8 flex flex-wrap gap-x-6 gap-y-4">
           <!-- <PlayStoreLink />
