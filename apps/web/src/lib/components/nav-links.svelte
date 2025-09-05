@@ -5,7 +5,7 @@
 
   const links = [
     { label: m.nav_features(), href: '/#features' },
-    { label: m.nav_pricing(), href: '/#pricing' },
+    // { label: m.nav_pricing(), href: '/#pricing' },
     { label: m.nav_faqs(), href: '/#faqs' },
   ]
 
