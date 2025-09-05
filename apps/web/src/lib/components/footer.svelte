@@ -101,7 +101,7 @@
       </form>
 
       <p class="mt-6 text-sm text-green-500 md:mt-0">
-        {m.name()} — {m.tagline()}
+        {m.tagline()}
       </p>
     </div>
   </Container>
