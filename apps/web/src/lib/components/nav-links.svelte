@@ -4,6 +4,7 @@
   let { footer }: { footer?: boolean } = $props()
 
   const links = [
+    { label: m.nav_team(), href: '/#team' },
     { label: m.nav_features(), href: '/#features' },
     // { label: m.nav_pricing(), href: '/#pricing' },
     { label: m.nav_faqs(), href: '/#faqs' },
