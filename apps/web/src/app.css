@@ -5,6 +5,7 @@
 
 html {
   color: var(--color-green-950);
+  scroll-behavior: smooth;
 }
 
 @theme {
