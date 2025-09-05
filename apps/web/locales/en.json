@@ -1,8 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "name": "Hovanka",
-  "tagline": "Hovanka — an architect for your mind",
-  "description": "In a world that never slows down, your mental health matters more than ever. \nThat’s why we build Hovanka, the space where your journey to mental strength happen.\nWe aim to make mental health your superpower!!!",
+  "tagline": "Hovanka — an architect \nfor your mind",
+  "description": "In a world that never slows down, \nyour mental health matters more than ever. \nThat's why we build Hovanka, the space \nwhere your journey to mental strength happen.\nWe aim to make mental health \nyour superpower!!!",
   "email": "hello@hovanka.app",
   "sign_in": "Sign in",
   "try_it_out": "Try it out",
@@ -23,7 +23,7 @@
   "hero_button_url": "/hovanka-pitch-deck.pdf",
 
   "secondary_features_title": "What makes Hovanka special?",
-  "secondary_features_description": "We're not just about providing practical tools. Our mission is to help you truly understand yourself. \nWe want to enhance your self-awareness and give you deeper insights into your mind's inner works, and how with science and practice you can improve your mental health.",
+  "secondary_features_description": "We're not just about providing practical tools. \nOur mission is to help you truly understand yourself. \nWe want to enhance your self-awareness and give you deeper insights into your mind's inner works, and how with science and practice you can improve your mental health.",
   "secondary_features_0_title": "Generative workflow",
   "secondary_features_0_description": "At Hovanka's core is our intelligent engine that analyzes your needs. It's the architect that builds a unique and effective mental wellness plan just for you.",
   "secondary_features_1_title": "Daily Blueprints",
@@ -93,12 +93,12 @@
   "faq_5_question": "",
   "faq_5_answer": "",
 
-  "about_Hovanka_title": "Who’s creating Hovanka?",
-  "about_Hovanka_description": "Our team is backed with people who do know how it’s like to feel lost, overwhelmed and helpless, cus no current tool works.\nThis team is also the one, who has experience in psychotherapy, deep-tech development, design, PR and other specialists.",
-  "about_Hovanka_footer": "We’re here to make Hovanka real, so you won’t be disappointed in other apps anymore.\nAnd all you will think about is how to live your best life!!!!",
+  "about_Hovanka_title": "Who's creating Hovanka?",
+  "about_Hovanka_description": "Our team is backed with people who do know how it's like to feel lost, overwhelmed and helpless, cus no current tool works.\nThis team is also the one, who has experience in psychotherapy, deep-tech development, design, PR and other specialists.",
+  "about_Hovanka_footer": "We're here to make Hovanka real, so you won't be disappointed in other apps anymore.\nAnd all you will think about is how to live your best life!!!!",
 
-  "our_progress_title": "What we’ve already done?",
-  "our_progress_description": "Our team has performed qualitative and quantitavite research. We’ve analyzed the needs and wants of our audience. Received valuable insights and confirmed our hypothesis that YOU do need Hovanka with our generative workflow idea.",
-  "our_progress_second_description": "We’ve also won the Demo Day of the KSE GBS STARTUP ECOSYSTEM 2025.\nWe got to finals of Set University Generation H2.0 Mentorship program\nAnd got into EIT Founders2Founders program!!",
-  "our_progress_footer": "As you see, we’re on track and plan to boost our growth even more"
+  "our_progress_title": "What we've already done?",
+  "our_progress_description": "Our team has performed qualitative and quantitavite research. We've analyzed the needs and wants of our audience. Received valuable insights and confirmed our hypothesis that YOU do need Hovanka with our generative workflow idea.",
+  "our_progress_second_description": "We've also won the Demo Day of the KSE GBS STARTUP ECOSYSTEM 2025.\nWe got to finals of Set University Generation H2.0 Mentorship program\nAnd got into EIT Founders2Founders program!!",
+  "our_progress_footer": "As you see, we're on track and plan to boost our growth even more"
 }
