@@ -4,7 +4,7 @@
   import Container from './container.svelte'
 </script>
 
-<section class="overflow-hiddenpy-20 relative border-t border-green-200 sm:py-28">
+<section id="team" class="overflow-hiddenpy-20 relative border-t border-green-200 sm:py-28">
   <Container class="relative">
     <h2 class="mb-8 text-center font-serif text-4xl font-semibold tracking-tight text-green-950 sm:text-4xl">
       {m.about_Hovanka_title()}
