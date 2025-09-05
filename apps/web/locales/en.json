@@ -93,9 +93,10 @@
   "faq_5_question": "",
   "faq_5_answer": "",
 
-  "about_Hovanka_title": "Who's creating Hovanka?",
-  "about_Hovanka_description": "Our team is backed with people who do know how it's like to feel lost, overwhelmed and helpless, cus no current tool works.\nThis team is also the one, who has experience in psychotherapy, deep-tech development, design, PR and other specialists.",
-  "about_Hovanka_footer": "We're here to make Hovanka real, so you won't be disappointed in other apps anymore.\nAnd all you will think about is how to live your best life!!!!",
+  "team_title": "Who’s creating Hovanka?",
+  "team_description": "Our team is backed with people who do know how it’s like to feel lost, \noverwhelmed and helpless, cus no current tool works.",
+  "team_second_description": "This team is also the one, who has experience in psychotherapy, \ndeep-tech development, design, PR and other specialists.",
+  "team_footer": "We’re here to make Hovanka real, so you won’t be disappointed in other apps anymore.\nAnd all you will think about is how to live your best life!!!!",
 
   "our_progress_title": "What we've already done?",
   "our_progress_description": "Our team has performed qualitative and quantitavite research. We've analyzed the needs and wants of our audience. Received valuable insights and confirmed our hypothesis that YOU do need Hovanka with our generative workflow idea.",

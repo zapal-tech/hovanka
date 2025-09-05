@@ -1,11 +1,11 @@
 <script lang="ts">
-  import AboutHovanka from '$lib/components/about-Hovanka.svelte'
   import CallToAction from '$lib/components/call-to-action.svelte'
   import Faqs from '$lib/components/faqs.svelte'
   import Hero from '$lib/components/hero.svelte'
   import Layout from '$lib/components/layouts/default.svelte'
-  import Pricing from '$lib/components/pricing.svelte'
+  // import Pricing from '$lib/components/pricing.svelte'
   import SecondaryFeatures from '$lib/components/secondary-features.svelte'
+  import Team from '$lib/components/team.svelte'
   import * as m from '$lib/paraglide/messages'
 </script>
 
@@ -17,8 +17,8 @@
 <Layout>
   <Hero />
   <CallToAction />
+  <Team />
   <SecondaryFeatures />
   <!-- <Pricing /> -->
-  <AboutHovanka />
   <Faqs />
 </Layout>
