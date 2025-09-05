@@ -1,5 +1,6 @@
 <script lang="ts">
   import CallToAction from '$lib/components/call-to-action.svelte'
+  import ContactUs from '$lib/components/contact-us.svelte'
   import Faqs from '$lib/components/faqs.svelte'
   import Hero from '$lib/components/hero.svelte'
   import Layout from '$lib/components/layouts/default.svelte'
@@ -21,4 +22,5 @@
   <SecondaryFeatures />
   <!-- <Pricing /> -->
   <Faqs />
+  <ContactUs />
 </Layout>
