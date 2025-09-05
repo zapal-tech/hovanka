@@ -21,8 +21,9 @@ html {
   --color-green-900: #0e463b;
   --color-green-950: #072721;
 
-  --font-sans: 'Open Sans', 'sans-serif';
+  /* --font-sans: 'Open Sans', 'sans-serif'; */
   --font-serif: 'Source Serif 4', 'serif';
+  --font-inter: 'Inter', 'sans-serif';
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
@@ -97,5 +98,5 @@ html {
 }
 
 @theme inline {
-  --default-font-family: var(--font-sans);
+  --default-font-family: var(--font-inter);
 }

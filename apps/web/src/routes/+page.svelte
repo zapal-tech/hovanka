@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AboutHovanka from '$lib/components/about-Hovanka.svelte'
   import CallToAction from '$lib/components/call-to-action.svelte'
   import Faqs from '$lib/components/faqs.svelte'
   import Hero from '$lib/components/hero.svelte'
@@ -18,5 +19,6 @@
   <CallToAction />
   <SecondaryFeatures />
   <!-- <Pricing /> -->
+  <AboutHovanka />
   <Faqs />
 </Layout>
