@@ -17,6 +17,6 @@
   <Hero />
   <CallToAction />
   <SecondaryFeatures />
-  <Pricing />
+  <!-- <Pricing /> -->
   <Faqs />
 </Layout>

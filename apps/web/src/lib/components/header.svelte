@@ -60,9 +60,9 @@
                 <a use:popover.button class="block text-base leading-7 tracking-tight text-green-700" href="/#features"
                   >{m.nav_features()}</a
                 >
-                <a use:popover.button class="block text-base leading-7 tracking-tight text-green-700" href="/#pricing"
+                <!-- <a use:popover.button class="block text-base leading-7 tracking-tight text-green-700" href="/#pricing"
                   >{m.nav_pricing()}</a
-                >
+                > -->
                 <a use:popover.button class="block text-base leading-7 tracking-tight text-green-700" href="/#faqs"
                   >{m.nav_faqs()}</a
                 >
