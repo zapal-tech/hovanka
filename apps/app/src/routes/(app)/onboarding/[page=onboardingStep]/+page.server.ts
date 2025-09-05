@@ -29,7 +29,6 @@ export const actions = {
       const formData = await request.formData()
       const formDataValues = formData.getAll('values')
       const formDataValue = formData.get('value')
-      console.log(formDataValue)
 
       const formDataObj = {
         [onboardingStep]:
