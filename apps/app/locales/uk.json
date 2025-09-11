@@ -45,5 +45,8 @@
   "onboarding_step_personalizedAINotificationsPermission_title": "Дозволити персоналізовані AI сповіщення?",
   "onboarding_step_personalizedAINotificationsPermission_subtitle": "Ми використовуємо ШІ, щоб надсилати тобі персоналізовані сповіщення, які допоможуть тобі досягти своїх цілей",
   "onboarding_step_personalizedAINotificationsPermission_submit": "Так, дозволити",
-  "onboarding_step_personalizedAINotificationsPermission_decline": "Ні, дякую"
+  "onboarding_step_personalizedAINotificationsPermission_decline": "Ні, дякую",
+  "onboarding_completed_title": "Все готово!",
+  "onboarding_completed_subtitle": "Дякую, що пройшов(ла) онбординг. Ми раді бачити тебе тут!\nТепер ти можеш подивитися нашу PoC версію веб-додатку, а також ми обов'язково повідомимо тебе по електронній пошті, коли справжній додаток з усіма його суперсилами буде готовий!",
+  "onboarding_completed_button": "Поїхали!"
 }

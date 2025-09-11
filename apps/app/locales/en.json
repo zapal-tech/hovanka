@@ -45,5 +45,8 @@
   "onboarding_step_personalizedAINotificationsPermission_title": "Allow personalized AI notifications?",
   "onboarding_step_personalizedAINotificationsPermission_subtitle": "We use AI to send you personalized notifications that will help you achieve your goals",
   "onboarding_step_personalizedAINotificationsPermission_submit": "Yes, allow",
-  "onboarding_step_personalizedAINotificationsPermission_decline": "No, thanks"
+  "onboarding_step_personalizedAINotificationsPermission_decline": "No, thanks",
+  "onboarding_completed_title": "You're all set!",
+  "onboarding_completed_subtitle": "Thank you for completing the onboarding process. We're excited to have you on board!\nNow you can explore our PoC app and we're will notify you via email when the real superpowered app will be ready!",
+  "onboarding_completed_button": "Start exploring"
 }
